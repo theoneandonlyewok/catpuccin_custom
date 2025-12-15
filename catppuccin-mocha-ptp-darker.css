@@ -621,10 +621,30 @@ html.busy-cursor * {
   cursor: wait !important;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  background: #181825
-    url("https://datfunc.github.io/ptp/assets/imgs/body_bg.svg");
-  margin: 0 auto;
+  position: relative;
+  background: #1E1E2E;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1E1E2E
+    url("https://theoneandonlyewok.github.io/catpuccin_custom/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
 }
 
 #wrapper {
