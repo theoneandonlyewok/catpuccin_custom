@@ -1,0 +1,3703 @@
+/* ==========================================================================
+   ++++++++++ [Catppuccin Mocha Theme for PTP] ++++++++++
+   Converted from Blue Night Theme by @PuNkFuSe
+   ========================================================================== */
+
+/* Catppuccin Mocha Color Palette
+   Base:       #1e1e2e
+   Mantle:     #181825
+   Crust:      #11111b
+   Surface 0:  #313244
+   Surface 1:  #45475a
+   Surface 2:  #585b70
+   Overlay 0:  #6c7086
+   Overlay 1:  #7f849c
+   Overlay 2:  #9399b2
+   Text:       #cdd6f4
+   Subtext 1:  #bac2de
+   Subtext 0:  #a6adc8
+   Blue:       #89b4fa
+   Lavender:   #b4befe
+   Sapphire:   #74c7ec
+   Sky:        #89dceb
+   Teal:       #94e2d5
+   Green:      #a6e3a1
+   Yellow:     #f9e2af
+   Peach:      #fab387
+   Maroon:     #eba0ac
+   Red:        #f38ba8
+   Mauve:      #cba6f7
+   Pink:       #f5c2e7
+   Flamingo:   #f2cdcd
+   Rosewater:  #f5e0dc
+*/
+
+/****************************************************************************
+1.0 - Reset CSS */
+/************************************************************************
+1.1 - Normalize.css (8.0.1) */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/************************************************************************
+  1.2 - Custom Reset */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cdd6f4;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre {
+  margin: 0;
+}
+
+pre br {
+  display: none;
+  line-height: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/****************************************************************************
+  2.0 - Typography */
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bebas Neue Regular"), local("BebasNeue-Regular"),
+    url("https://datfunc.github.io/ptp/assets/fonts/bebas-neue/bebas-neue-v1-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/bebas-neue/bebas-neue-v1-latin-ext_latin-regular.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Light"), local("OpenSans-Light"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"),
+    url("https://github.com/datFunc/ptp__blue-night-theme/blob/master/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300italic.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-300italic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Open Sans Italic"), local("OpenSans-Italic"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Open Sans SemiBold Italic"), local("OpenSans-SemiBoldItalic"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600italic.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600italic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-800.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 800;
+  src: local("Open Sans ExtraBold Italic"), local("OpenSans-ExtraBoldItalic"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-800italic.woff2")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/open-sans/open-sans-v17-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-800italic.woff")
+      format("woff");
+}
+
+/* Note: Only used for the alt-header version */
+@font-face {
+  font-family: "Sequel Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Sequel Sans Bold Disp"), local("SequelSans-BoldDisp"),
+    url("https://datfunc.github.io/ptp/assets/fonts/sequel-sans/sequel-sans-bold-display.woff")
+      format("woff2"),
+    url("https://datfunc.github.io/ptp/assets/fonts/sequel-sans/sequel-sans-bold-display.woff2")
+      format("woff");
+}
+
+body {
+  color: #cdd6f4;
+  font-family: "Open Sans", Helvetica, Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: normal;
+  word-wrap: break-word;
+}
+
+.page__title {
+  text-align: center;
+}
+
+.label {
+  font-weight: 700;
+  text-align: right;
+}
+
+.encoding-history-status--finished,
+.missing-torrent-status--exists,
+.torrent-info__reported {
+  font-weight: 700;
+}
+
+.missing-torrent-status--trumpable,
+.torrent-info__trumpable {
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.6rem;
+  vertical-align: baseline;
+  color: #f9e2af;
+  background: rgba(249, 226, 175, 0.15) !important;
+  padding: 0.2rem 0.6rem;
+  border: none !important;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.torrent-info__trumpable:hover {
+  background: rgba(249, 226, 175, 0.25) !important;
+}
+
+.encoding-history-status--canceled,
+.bonus-point-history--sent .encoding-history-status--expired,
+.log__message--deleted,
+.no-seeders,
+.missing-torrent-status--missing,
+.torrent-info__reported {
+  color: #f38ba8;
+}
+
+.torrent-info__reported,
+.missing-torrent-status--missing,
+.missing-torrent-status--no-source,
+.missing-torrent-status--dead-source {
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.6rem;
+  vertical-align: baseline;
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.15) !important;
+  padding: 0.2rem 0.6rem;
+  border: none !important;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.torrent-info__reported:hover,
+.missing-torrent-status--no-source {
+  background: rgba(243, 139, 168, 0.25) !important;
+}
+
+.encoding-history-status--expired,
+.missing-torrent-status--missing,
+.torrent-info-link--user-downloaded,
+.torrent-info-link--user-snatched {
+  font-weight: 700;
+}
+
+.bonus-point-history--received,
+.log__message--uploaded,
+.missing-torrent-status--exists,
+.encoding-history-status--finished,
+.torrent-info-link--user-downloaded,
+.snatchlist-status--not-hnr,
+.snatchlist-status--seeding {
+  color: #a6e3a1;
+}
+
+.torrent-info__download-modifier--free,
+.torrent-info__download-modifier--half,
+.torrent-info__download-modifier--neutral,
+.movie-page__torrent-reports-title,
+.movie-tooltip__rating__title {
+  font-weight: 700;
+}
+
+.torrent-info-link--user-snatched {
+  color: #89b4fa;
+}
+
+.torrent-info__download-modifier--free,
+.missing-torrent-status--exists {
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.6rem;
+  vertical-align: baseline;
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.15) !important;
+  padding: 0.2rem 0.6rem;
+  border: none !important;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.torrent-info__download-modifier--free:hover {
+  background: rgba(166, 227, 161, 0.25) !important;
+}
+
+#missing .missing-torrent-status--trumpable,
+#missing .torrent-info__trumpable,
+#missing .torrent-info__reported,
+#missing .missing-torrent-status--missing,
+#missing .missing-torrent-status--no-source,
+#missing .missing-torrent-status--dead-source,
+#missing .torrent-info__download-modifier--free,
+#missing .missing-torrent-status--exists {
+  display: table-cell;
+  border-radius: initial;
+  padding: 0.2rem 0.6rem !important;
+  vertical-align: middle;
+}
+
+.log__message--edited {
+  color: #a6adc8;
+}
+
+.form__label {
+  font-weight: 700;
+}
+
+#uploadtoken {
+  font-size: 0.65rem !important;
+}
+
+optgroup {
+  font-weight: 700;
+}
+
+.simple-tabs__link--active {
+  color: #cdd6f4 !important;
+}
+
+.ratio-00,
+.snatchlist-status--hnr,
+.snatchlist-status--not-seeding {
+  color: #f38ba8;
+}
+
+.ratio-01 {
+  color: #f38ba8;
+}
+
+.ratio-02 {
+  color: #f38ba8;
+}
+
+.ratio-03 {
+  color: #eba0ac;
+}
+
+.ratio-04 {
+  color: #fab387;
+}
+
+.ratio-05 {
+  color: #fab387;
+}
+
+.ratio-06,
+.snatchlist-status--removed-hnr {
+  color: #fab387;
+}
+
+.ratio-07 {
+  color: #f9e2af;
+}
+
+.ratio-08 {
+  color: #f9e2af;
+}
+
+.ratio-09 {
+  color: #f9e2af;
+}
+
+.ratio-10 {
+  color: #a6e3a1;
+}
+
+.ratio-20 {
+  color: #a6e3a1;
+}
+
+.ratio-50 {
+  color: #a6e3a1;
+}
+
+.ratio-infinite {
+  color: #a6e3a1;
+}
+
+/****************************************************************************
+  3.0 - Globals */
+html.busy-cursor,
+html.busy-cursor * {
+  cursor: wait !important;
+}
+
+body {
+  background: #1e1e2e
+    url("https://datfunc.github.io/ptp/assets/imgs/body_bg.svg");
+  margin: 0 auto;
+}
+
+#wrapper {
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #bac2de;
+  border: none;
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #cdd6f4;
+  border: none;
+}
+
+a[href*="report"]:hover {
+  color: #f38ba8;
+}
+
+.clearfix:after,
+.forum-post__heading:after,
+.grid:after,
+.huge-movie-list__movie:after,
+.poll__bar:after,
+.sidebar:after,
+.tabs__bar__list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+blockquote {
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed #585b70;
+  border-radius: 5px;
+  background-color: #181825;
+}
+
+.list > li {
+  margin-top: 2px;
+}
+
+.heading:first-child {
+  margin-top: 0;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+mark {
+  background: #f9e2af;
+  color: #11111b;
+}
+
+figure {
+  margin: 1.5em 40px;
+}
+
+.alert:first-child {
+  margin-top: 0;
+}
+
+.alert:last-child {
+  margin-bottom: 0;
+}
+
+.site-debug {
+  margin-bottom: 15px;
+}
+
+.stylesheet-preview-container {
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.lightbox {
+  position: fixed;
+  text-align: center;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  padding: 0;
+  z-index: 1002;
+  overflow: auto;
+  outline: 0;
+}
+
+.lightbox__shroud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 27, 0.9);
+  z-index: 1001;
+}
+
+body.lightbox__scroll-lock {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* qTip */
+.qtip {
+  position: absolute;
+  left: -28000px;
+  top: -28000px;
+  display: none;
+  max-width: 280px;
+  min-width: 50px;
+  font-size: 1.5px;
+  line-height: 12px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.qtip-content {
+  position: relative;
+  padding: 9px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.qtip-content label {
+  display: block;
+}
+
+.qtip-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.qtip:not(.ie9haxors) div.qtip-content,
+.qtip:not(.ie9haxors) div.qtip-titlebar {
+  -webkit-filter: none;
+  filter: none;
+  -ms-filter: none;
+}
+
+.qtip .qtip-tip {
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.qtip .qtip-tip,
+.qtip .qtip-tip * {
+  position: absolute;
+  color: #123456;
+  background: 0 0;
+  border: none dashed transparent;
+}
+
+.qtip .qtip-tip canvas {
+  top: 0;
+  left: 0;
+}
+
+.qtip-ptp {
+  background: #11111b;
+  background-color: rgba(17, 17, 27, 0.9);
+  line-height: normal !important;
+  max-width: none !important;
+  color: #cdd6f4;
+  border: 1px solid transparent !important;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px !important;
+}
+
+.light-youtube-embed {
+  display: inline-block;
+  position: relative;
+  width: 480px;
+  height: 360px;
+}
+
+.light-youtube-embed__image {
+  width: 480px;
+  height: 360px;
+}
+
+.light-youtube-embed::after,
+.light-youtube-embed:hover::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  pointer-events: none;
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/play-trailer.svg");
+}
+
+.light-youtube-embed:hover::after {
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/yt_icon_rgb.svg");
+  max-width: 80px;
+}
+
+/* Modal */
+#simplemodal-overlay {
+  background-color: #11111b;
+  cursor: wait;
+}
+
+#simplemodal-overlay-pointer {
+  background-color: #11111b;
+  cursor: pointer;
+}
+
+#simplemodal-container a.modalCloseImg {
+  background: url("https://datfunc.github.io/ptp/assets/icons/close.svg")
+    no-repeat center center !important;
+  background-size: 26px !important;
+  max-width: 26px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  cursor: pointer;
+}
+
+a[title="Close"] {
+  width: 26px !important;
+  height: 26px !important;
+  box-sizing: border-box !important;
+  padding-left: 26px !important;
+  background: url("https://datfunc.github.io/ptp/assets/icons/close.svg")
+    no-repeat center center !important;
+  background-size: contain !important;
+}
+
+a[title="Close"]:hover {
+  transform: scale(1.2);
+}
+
+/* BBCode */
+.bbcode-size-1 {
+  font-size: 0.75em;
+}
+
+.bbcode-size-2 {
+  font-size: 1em;
+}
+
+.bbcode-size-3 {
+  font-size: 1.25em;
+}
+
+.bbcode-size-4 {
+  font-size: 1.5em;
+}
+
+.bbcode-size-5 {
+  font-size: 1.75em;
+}
+
+.bbcode-size-6 {
+  font-size: 2em;
+}
+
+.bbcode-size-7 {
+  font-size: 2.25em;
+}
+
+.bbcode-size-8 {
+  font-size: 2.5em;
+}
+
+.bbcode-size-9 {
+  font-size: 2.75em;
+}
+
+.bbcode-size-10 {
+  font-size: 3em;
+}
+
+.bbcode__image {
+  max-width: 500px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar .bbcode__image {
+  max-width: 100%;
+}
+
+.bbcode-text-preview {
+  border: 1px solid #313244;
+  padding: 0.5em;
+}
+
+.bbcode-table-guard {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.bbcode-toolbar__button {
+  width: 24px;
+  height: 24px;
+  float: left;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 10px;
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.bbcode-toolbar__button:hover {
+  opacity: 1;
+  transform: translateY(-0.1rem);
+}
+
+.form__input #Bbcode_Toolbar {
+  margin-top: 0.4rem;
+}
+
+/* BBCode Icons - keeping original URLs from Blue Night theme */
+.js-bbcode-toolbar__bold-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/bold_alt.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__italic-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/italic.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__underline-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/underline.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__strikethrough-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/strikethrough.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__link-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/link.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__image-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/image.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__hide-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/hide.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__spoiler-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/spoiler.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__quote-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/quote.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__size-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/font-size.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__color-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/color.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__youtube-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/vid-ut.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__mediainfo-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/mediainfo.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__align-center-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/align.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__align-right-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/align-right.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__code-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/code.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__list-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/bullet-list.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__emoticon-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/emojis.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__comparison-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/compare.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__staff-button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/warning_alt.svg")
+    no-repeat;
+}
+
+a[title="BBCode help"] .bbcode-toolbar__button {
+  background: url("https://datfunc.github.io/ptp/assets/icons/toolbar/question.svg")
+    no-repeat;
+}
+
+.js-bbcode-toolbar__align-center-button,
+.js-bbcode-toolbar__align-right-button,
+.js-bbcode-toolbar__bold-button,
+.js-bbcode-toolbar__code-button,
+.js-bbcode-toolbar__color-button,
+.js-bbcode-toolbar__comparison-button,
+.js-bbcode-toolbar__emoticon-button,
+.js-bbcode-toolbar__hide-button,
+.js-bbcode-toolbar__image-button,
+.js-bbcode-toolbar__italic-button,
+.js-bbcode-toolbar__link-button,
+.js-bbcode-toolbar__list-button,
+.js-bbcode-toolbar__mediainfo-button,
+.js-bbcode-toolbar__quote-button,
+.js-bbcode-toolbar__size-button,
+.js-bbcode-toolbar__spoiler-button,
+.js-bbcode-toolbar__strikethrough-button,
+.js-bbcode-toolbar__underline-button,
+.js-bbcode-toolbar__youtube-button,
+.js-bbcode-toolbar__staff-button,
+a[title="BBCode help"] .bbcode-toolbar__button {
+  background-size: contain;
+  background-position: center center !important;
+  width: 12px !important;
+  height: 12px !important;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.bbcode-toolbar__size-popup-row {
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.bbcode-toolbar__size-popup-row:hover {
+  background: #45475a;
+}
+
+.bbcode-toolbar__color-popup-color {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.bbcode-toolbar__color-popup-color:hover {
+  border: solid 2px #fab387;
+}
+
+.bbcode-toolbar__emoticon-popup-item {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  padding: 2px;
+  margin: 2px;
+  transition: all 0.3s;
+}
+
+.bbcode-toolbar__emoticon-popup-item:hover {
+  transform: scale(1.2);
+}
+
+/* BBCode Emojis - keeping original URLs */
+img[src*="smileys/angry.gif"],
+img[src*="smileys/biggrin.gif"],
+img[src*="smileys/blank.gif"],
+img[src*="smileys/blush.gif"],
+img[src*="smileys/cool.gif"],
+img[src*="smileys/creepy.gif"],
+img[src*="smileys/crom.gif"],
+img[src*="smileys/crying.gif"],
+img[src*="smileys/eyesright.gif"],
+img[src*="smileys/frown.gif"],
+img[src*="smileys/heart.gif"],
+img[src*="smileys/hmm.gif"],
+img[src*="smileys/laughing.gif"],
+img[src*="smileys/ninja.gif"],
+img[src*="smileys/no.gif"],
+img[src*="smileys/nod.gif"],
+img[src*="smileys/ohnoes.gif"],
+img[src*="smileys/ohshit.gif"],
+img[src*="smileys/omg.gif"],
+img[src*="smileys/paddle.gif"],
+img[src*="smileys/sad.gif"],
+img[src*="smileys/shifty.gif"],
+img[src*="smileys/sick.gif"],
+img[src*="smileys/smile.gif"],
+img[src*="smileys/sorry.gif"],
+img[src*="smileys/thanks.gif"],
+img[src*="smileys/tongue.gif"],
+img[src*="smileys/wave.gif"],
+img[src*="smileys/wink.gif"],
+img[src*="smileys/worried.gif"],
+img[src*="smileys/wtf.gif"],
+img[src*="smileys/wub.gif"] {
+  width: 16px !important;
+  height: 16px !important;
+  box-sizing: border-box !important;
+  padding-left: 20px !important;
+  background-size: contain !important;
+}
+
+img[src*="smileys/smile.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/smile.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/sad.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/sad.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/biggrin.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/big-grin.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/ohshit.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/oh-shit.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/tongue.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/tongue.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/blank.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/blank-straight-face.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/angry.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/angry.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/blush.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/blush.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/cool.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/cool.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/creepy.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/creepy.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/crying.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/crying.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/eyesright.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/eyes-right.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/frown.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/frown.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/hmm.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/hmm.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/laughing.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/laughing.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/ninja.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/ninja.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/no.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/no.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/nod.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/nod.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/ohnoes.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/oh-noes.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/omg.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/omg.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/shifty.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/shifty.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/sick.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/sick.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/wink.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/wink.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/worried.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/worried.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/wtf.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/wtf.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/wub.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/wub.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/paddle.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/paddle-alt.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/wave.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/wave-hug.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/heart.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/heart.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/thanks.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/thanks.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/crom.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/crom-thanks.svg")
+    no-repeat center center;
+}
+
+img[src*="smileys/sorry.gif"] {
+  background: url("https://datfunc.github.io/ptp/assets/emojis/sorry.svg")
+    no-repeat center center;
+}
+
+/* Forum Post Heading Icons - keeping original URLs */
+img[src="static/common/symbols/donor.png"],
+img[src="static/common/symbols/miner.png"],
+img[src*="static/common/symbols/badge_checker.png"],
+img[src*="static/common/symbols/badge_gpchecker.png"],
+img[src*="static/common/symbols/badge_floppy_base.png"],
+img[src*="static/common/symbols/badge_floppy_silver.png"],
+img[src*="static/common/symbols/badge_floppy_bronze.png"],
+img[src*="static/common/symbols/badge_floppy_gold.png"],
+img[src*="static/common/symbols/badge_floppy_diamond.png"] {
+  width: 13px;
+  height: 13px;
+  padding-left: 13px;
+}
+
+img[src="static/common/symbols/donor.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/donor.svg")
+    no-repeat center center;
+}
+
+img[src="static/common/symbols/miner.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/miner-alt.svg")
+    no-repeat center center;
+}
+
+img[src="static/common/symbols/badge_checker.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge-checker.svg")
+    no-repeat center center;
+}
+
+img[src="static/common/symbols/badge_gpchecker.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_gpchecker.svg")
+    no-repeat center center;
+}
+
+img[src="static/common/symbols/filmclub.png"] {
+  width: 20px;
+  height: 20px;
+  padding-left: 20px;
+  background: url("https://datfunc.github.io/ptp/assets/icons/film-club-icon.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/badge_floppy_base.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_base.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+img[src*="static/common/symbols/badge_floppy_silver.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_silver.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+img[src*="static/common/symbols/badge_floppy_bronze.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_bronze.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+img[src*="static/common/symbols/badge_floppy_gold.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_gold.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+img[src*="static/common/symbols/badge_floppy_diamond.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge_diamond.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+img[src="static/common/symbols/encoder.png"],
+img[src*="static/common/quality.gif"],
+img[src*="static/common/symbols/encoder_gp.png"],
+img[src*="static/common/symbols/disabled.png"],
+img[src*="static/common/symbols/warned.png"] {
+  width: 12px;
+  height: 12px;
+  padding-left: 12px;
+}
+
+img[src="static/common/symbols/encoder.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/encoder.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/quality.gif"],
+img[src*="static/common/symbols/encoder_gp.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/gold-encode-checker.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/disabled.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/banned.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/warned.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/topic-sticky-unread.svg")
+    no-repeat center center;
+}
+
+img[src="static/common/symbols/donor.png"],
+img[src="static/common/symbols/miner.png"],
+img[src*="static/common/symbols/badge_checker.png"],
+img[src*="static/common/symbols/badge_gpchecker.png"],
+img[src="static/common/symbols/filmclub.png"],
+img[src="static/common/symbols/encoder.png"],
+img[src*="static/common/quality.gif"],
+img[src*="static/common/symbols/encoder_gp.png"],
+img[src*="static/common/symbols/disabled.png"],
+img[src*="static/common/symbols/warned.png"] {
+  box-sizing: border-box;
+  background-size: contain;
+}
+
+.golden-popcorn-character {
+  display: inline-block;
+  margin: 0 auto;
+  text-indent: -3000px;
+  font: 0/0 Arial;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0);
+  width: 12px;
+  height: 12px;
+  background: url("https://datfunc.github.io/ptp/assets/icons/gold-encode-checker.svg")
+    no-repeat center center;
+  background-size: 12px;
+}
+
+/* Rank Icons - keeping original URLs */
+img[src*="static/common/symbols/Rank1.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-1.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank2.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-2.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank3.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-3.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank4.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-4.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank5.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-5.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank6.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rank-6.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/symbols/Rank1.png"],
+img[src*="static/common/symbols/Rank2.png"],
+img[src*="static/common/symbols/Rank3.png"],
+img[src*="static/common/symbols/Rank4.png"],
+img[src*="static/common/symbols/Rank5.png"],
+img[src*="static/common/symbols/Rank6.png"] {
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  background-size: contain;
+}
+
+.forum-post__body img[src*="smileys/thanks.gif"] {
+  width: 40px !important;
+  height: 40px !important;
+  box-sizing: border-box !important;
+  padding-left: 40px !important;
+}
+
+img[src*="static/common/caticons/tv.png"],
+img[src*="static/common/caticons/movies.png"] {
+  width: 28px !important;
+  height: 28px !important;
+  box-sizing: border-box !important;
+  padding-left: 28px !important;
+  background-size: contain !important;
+  margin-top: 20px;
+}
+
+img[src*="static/common/caticons/tv.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/tv-icon.svg")
+    no-repeat center center;
+}
+
+img[src*="static/common/caticons/movies.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/post-topic-unread.svg")
+    no-repeat center center;
+}
+
+.staff-toolbar {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  padding: 6px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #45475a;
+}
+
+.staff-toolbar__link {
+  padding: 2px;
+}
+
+.staff-toolbar__link--important {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #f38ba8;
+  color: #cdd6f4;
+}
+
+.film-club-discuss-link {
+  text-align: center;
+  font-size: 0.71rem;
+  padding-top: 0.5em;
+}
+
+/************************************************************************
+  3.1 - Forms */
+.form--horizontal .form__label {
+  float: right;
+}
+
+.form__checkbox-label,
+.form__input,
+.form__radio-label {
+  padding-right: 0.9em;
+  margin-bottom: 0.5em;
+  font-size: 0.735rem !important;
+}
+
+.form__checkbox-label,
+.form__radio-label {
+  display: inline-block;
+}
+
+.form__checkbox-label--with-note,
+.form__radio-label--with-note {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.generic-form,
+.search-form {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.generic-form--narrow,
+.search-form--narrow {
+  max-width: 684px;
+}
+
+.generic-form--full-width {
+  width: 100%;
+}
+
+.search-form--toggleable {
+  margin-bottom: 0;
+}
+
+.toggleable-search-form__toggler-container {
+  text-align: center;
+}
+
+.toggleable-search-form__search-form {
+  margin-bottom: 15px;
+}
+
+.search-form__advanced-basic-toggler {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.generic-form__footer,
+.search-form__footer {
+  border-top: 1px solid #585b70;
+  padding-top: 8px;
+}
+
+.generic-form__footer--right-aligned,
+.search-form__footer--right-aligned {
+  text-align: right;
+}
+
+.generic-form__footer--no-border,
+.search-form__footer--no-border {
+  border-top-style: none;
+}
+
+.search-form__footer__results {
+  float: left;
+}
+
+/************************************************************************
+  3.1 - Inputs & Buttons */
+.input-group {
+  display: flex;
+}
+
+.input-group__field {
+  flex: 1;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+select {
+  background: #1e1e2e;
+  border: 1px solid #585b70;
+  color: #cdd6f4;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  font-family: "Open Sans", Tahoma, Helvetica, sans-serif;
+  font-weight: 700;
+  background: #7f849c;
+  color: #cdd6f4;
+  border: 1px solid transparent;
+  padding: 0.4rem 1rem;
+  margin: 0.1rem;
+  border-radius: 5px;
+  line-height: 1;
+  transition: all 0.3s;
+}
+
+button,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  background: #89b4fa;
+  box-shadow: 0 0 40px #89b4fa;
+  outline: 0;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  border: 1px solid #b4befe;
+  box-shadow: 0 0 40px #89b4fa;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline-color: #b4befe;
+}
+
+#inbox label {
+  vertical-align: baseline;
+}
+
+#inbox #messageformtable tr td img {
+  margin: 0 2.5px;
+  vertical-align: middle;
+}
+
+#inbox input[type="submit"] {
+  margin: 0.55rem 0.15rem 0.55rem 0;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+input[value="Delete"],
+input[value="Delete conversation"],
+input[value="Defriend"] {
+  background: #eba0ac;
+}
+
+input[value="Delete"]:hover,
+input[value="Delete"]:focus,
+input[value="Delete conversation"]:hover,
+input[value="Delete conversation"]:focus,
+input[value="Defriend"]:hover,
+input[value="Defriend"]:focus {
+  background: #f38ba8;
+  box-shadow: 0 0 40px #f38ba8;
+}
+
+input[value="Delete"]:focus {
+  border: 1px solid #f5c2e7;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[value="Delete"] {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5em 1em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[value="Delete"]:hover {
+  cursor: pointer;
+  -webkit-animation: jelly-effect 0.5s;
+  animation: jelly-effect 0.5s;
+}
+
+input,
+textarea {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+input {
+  line-height: normal;
+  background: #181825;
+  color: #cdd6f4;
+  font-size: 0.75rem;
+  padding-left: 0.4rem;
+  height: 28px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  margin: -7px 2px;
+  vertical-align: inherit;
+  vertical-align: text-top;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 40px #89b4fa;
+  border: 1px solid #74c7ec;
+}
+
+input[value="Search log"] {
+  margin-top: 0.5rem;
+}
+
+textarea {
+  overflow: auto;
+  background: #1e1e2e;
+  border: none;
+  color: #cdd6f4;
+  padding: 0.8rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #585b70;
+  background: #11111b;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+}
+
+select,
+select option,
+select option:first-child {
+  color: #a6adc8;
+  padding: 0.3rem;
+}
+
+select:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+input[name="runtime"] {
+  width: 152px;
+  max-width: 152px;
+}
+
+select[name="checked"] ~ input[name="runtime"] {
+  margin-left: 0.66rem;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #7f849c !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #7f849c !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #7f849c !important;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #7f849c !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7f849c !important;
+}
+
+/* Chrome, Edge, and Safari */
+::placeholder {
+  color: #7f849c !important;
+  opacity: 1;
+}
+
+/* Firefox */
+::-moz-placeholder {
+  color: #7f849c !important;
+  opacity: 1;
+}
+
+/* Internet Explorer lol */
+:-ms-input-placeholder {
+  color: #7f849c !important;
+}
+
+/* Validation */
+.bvalidator_errmsg {
+  display: none;
+  white-space: nowrap;
+  color: #cdd6f4;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  position: relative;
+  background: #f38ba8;
+  border: 3px solid #cdd6f4;
+}
+
+.bvalidator_errmsg:after,
+.bvalidator_errmsg:before {
+  top: 100%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.bvalidator_errmsg:after {
+  border-top-color: #f38ba8;
+  border-width: 8px;
+  left: 14px;
+  margin-left: -8px;
+}
+
+.bvalidator_errmsg:before {
+  border-top-color: #cdd6f4;
+  border-width: 12px;
+  left: 14px;
+  margin-left: -12px;
+}
+
+.bvalidator_errmsg .bvalidator_close_icon {
+  margin-left: 5px;
+  margin-top: -2px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+  color: #11111b;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.bvalidator_errmsg em {
+  display: none;
+}
+
+/* Custom Input Styling */
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    --active: #11111b;
+    --active-inner: #cdd6f4;
+    --focus: 2px rgba(137, 180, 250, 0.3);
+    --border: #585b70;
+    --border-hover: #89b4fa;
+    --background: #11111b;
+    --disabled: #cdd6f4;
+    --disabled-inner: #bac2de;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 16px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  }
+
+  input[type="checkbox"]:after,
+  input[type="radio"]:after {
+    content: "";
+    display: block;
+    left: -1px;
+    top: -1px;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
+  }
+
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+
+  input[type="checkbox"]:disabled,
+  input[type="radio"]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+  input[type="checkbox"]:disabled:checked,
+  input[type="radio"]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+
+  input[type="checkbox"]:disabled + label,
+  input[type="radio"]:disabled + label {
+    cursor: not-allowed;
+  }
+
+  input[type="checkbox"]:hover:not(:checked):not(:disabled),
+  input[type="radio"]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+
+  input[type="checkbox"]:focus,
+  input[type="radio"]:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+
+  input[type="checkbox"]:not(.switch),
+  input[type="radio"]:not(.switch) {
+    width: 16px;
+  }
+
+  input[type="checkbox"]:not(.switch):after,
+  input[type="radio"]:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+
+  input[type="checkbox"]:not(.switch):checked,
+  input[type="radio"]:not(.switch):checked {
+    --o: 1;
+  }
+
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    vertical-align: top;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:not(.switch) {
+    border-radius: 5px;
+    vertical-align: middle;
+  }
+
+  input[type="checkbox"]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 5px;
+    top: 2px;
+    transform: rotate(var(--r, 20deg));
+  }
+
+  input[type="checkbox"]:not(.switch):checked {
+    --r: 43deg;
+  }
+
+  input[type="checkbox"].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+
+  input[type="checkbox"].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+  }
+
+  input[type="checkbox"].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+
+  input[type="checkbox"].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+  }
+
+  input[type="radio"] {
+    border-radius: 50%;
+  }
+
+  input[type="radio"]:after {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+
+  input[type="radio"]:checked {
+    --s: 0.5;
+  }
+}
+
+/************************************************************************
+  3.2 - Tables */
+.page__main-content {
+  background: #313244;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 2.5rem;
+  font-size: 0.75rem;
+  border-top: none;
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.6);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+th {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  margin: 0 0 1em 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.table:last-child {
+  margin-bottom: 0;
+}
+
+.table > tbody > tr,
+.table > thead > tr {
+  background-color: #45475a;
+  font-size: 0.75rem;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  line-height: 1.42857;
+}
+
+.table thead:first-child tr:first-child th {
+  border-top: 0 none;
+  padding-left: 0.4rem;
+}
+
+.table--bordered > tbody > tr > td,
+.table--bordered > tbody > tr > th,
+.table--bordered > tfoot > tr > td,
+.table--bordered > tfoot > tr > th,
+.table--bordered > thead > tr > td,
+.table--bordered > thead > tr > th {
+  padding: 0.4rem;
+  border: 1px solid #585b70;
+}
+
+.table > tbody > tr {
+  border-left: 1px solid #585b70;
+  border-right: 1px solid #585b70;
+}
+
+.table--panel-like > thead > tr > td > a {
+  font-weight: 700;
+}
+
+.table--panel-like > thead > tr > td {
+  border: none;
+  font-weight: 700;
+}
+
+#index .table--panel-like > tbody > tr > td {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.table > tbody > tr.inbox-message--unread > td {
+  background-color: #7f849c !important;
+}
+
+.table--centered th {
+  text-align: center;
+}
+
+.table--no-border > tbody > tr > td,
+.table--no-border > tbody > tr > th,
+.table--no-border > tfoot > tr > td,
+.table--no-border > tfoot > tr > th,
+.table--no-border > thead > tr > td,
+.table--no-border > thead > tr > th {
+  border: none;
+}
+
+.table--striped > tbody > tr:nth-child(odd) > td,
+.table--striped > tbody > tr:nth-child(odd) > th,
+.table > tbody > tr.movie-page__torrent--highlighted {
+  background-color: #45475a;
+}
+
+.table--panel-like > thead > tr {
+  background: rgba(17, 17, 27, 0.9);
+}
+
+.table--panel-like > thead > tr,
+.table--panel-like > thead > tr a {
+  color: #cdd6f4;
+}
+
+#torrents .main-column table thead tr a {
+  color: #bac2de !important;
+}
+
+#torrents .main-column table thead tr a:hover {
+  color: #cdd6f4 !important;
+}
+
+.table--panel-like > thead > tr > th {
+  padding: 4px;
+  font-size: 0.8rem;
+}
+
+.table--panel-like > thead > tr > th {
+  padding: 7px;
+}
+
+.table--panel-like > thead > tr > th:first-child {
+  border: none;
+  border-top-left-radius: 5px !important;
+}
+
+.table--panel-like > thead > tr > th:last-child {
+  border: none;
+  border-top-right-radius: 5px !important;
+}
+
+.table--inplace-sortable > thead > tr > th {
+  cursor: pointer;
+}
+
+.table--inplace-sortable:last-child {
+  margin-bottom: 1em;
+}
+
+.table > tbody > tr.basic-movie-list__details-row {
+  font-size: 0.75rem;
+}
+
+.table > tbody > tr.basic-movie-list__details-row,
+.table > tbody > tr.compact-movie-list__details-row--odd {
+  background-color: #313244;
+}
+
+.table > tbody > tr.release-name-movie-list__details-row {
+  background-color: #45475a;
+}
+
+#top10 .table tr th,
+#top10 .table tr td {
+  text-align: left !important;
+}
+
+#forums .form__input tr[style="vertical-align: top;"] {
+  border: none;
+}
+
+#forums .form__input {
+  box-shadow: none;
+}
+
+.movie-page__actor-column {
+  text-align: left !important;
+  padding-left: 1rem !important;
+}
+
+#trumpable .release-name-movie-list__movie__release-name {
+  color: #cdd6f4;
+}
+
+#trumpable .release-name-movie-list__movie__release-name:hover {
+  color: #89b4fa;
+}
+
+.tabs__bar__list {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #45475a;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs__bar__list--centered {
+  display: flex;
+  justify-content: center;
+}
+
+.tabs__bar__item {
+  display: block;
+  float: left;
+  margin-right: 4px;
+}
+
+.tabs__bar__item:first-child {
+  margin-left: 10px;
+}
+
+.tabs__bar__link,
+.tabs__bar__link:active,
+.tabs__bar__link:focus,
+.tabs__bar__link:hover {
+  display: block;
+  margin-top: 6px;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  padding: 8px;
+  background-color: #45475a;
+  outline: 0;
+}
+
+.tabs__bar__link--page-title-like {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.tabs__bar__item--active > .tabs__bar__link,
+.tabs__bar__item--active > .tabs__bar__link:active,
+.tabs__bar__item--active > .tabs__bar__link:focus,
+.tabs__bar__item--active > .tabs__bar__link:hover {
+  border: none;
+  background-color: rgba(17, 17, 27, 0.9);
+  color: #cdd6f4;
+}
+
+.tabs__bar__link:hover {
+  background-color: #585b70;
+}
+
+.tabs__panel {
+  display: none;
+}
+
+.tabs__panel--active {
+  display: block;
+}
+
+.torrent-info-link--user-seeding {
+  font-weight: 700;
+  color: #fab387;
+}
+
+.torrent-info-link--user-leeching {
+  font-weight: 700;
+  color: #f38ba8;
+}
+
+.torrent-info-link--user-uploaded {
+  font-weight: 700;
+  color: #f5c2e7;
+}
+
+.l_movie {
+  color: #cdd6f4;
+}
+
+.l_movie:hover {
+  color: #89b4fa;
+}
+
+.tags {
+  color: #bac2de;
+}
+
+/* Search bar */
+.search-bar {
+  background: #45475a;
+  font-size: 0.8rem;
+  padding: 0.6em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid #585b70;
+}
+
+.search-bar__search-field__input::-moz-placeholder {
+  color: #7f849c !important;
+}
+
+.search-bar__search-field__input:-ms-input-placeholder {
+  color: #7f849c !important;
+}
+
+.search-bar__search-field__input::-webkit-input-placeholder {
+  color: #7f849c !important;
+}
+
+.search-bar__search-field__input::-ms-input-placeholder {
+  color: #7f849c !important;
+}
+
+.search-bar__search-field__input::placeholder {
+  color: #7f849c !important;
+}
+
+.search-bar__search-field,
+.search-bar__search-field__form,
+.search-bar__search-field__input {
+  display: inline;
+}
+
+.search-bar__list {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search-bar__list > * {
+  flex: 1;
+}
+
+.search-bar__list input {
+  width: 90%;
+}
+
+.search-bar__search-field {
+  margin: 0;
+  position: relative;
+}
+
+.search-bar__search-field__input {
+  position: relative;
+  top: 0;
+  background-color: #11111b;
+  font-size: 0.8em;
+  color: #bac2de;
+  border: 1px solid #585b70;
+  border-radius: 5px;
+  padding: 2px 3px;
+  text-align: center;
+  margin: 0.4rem;
+}
+
+.search-bar__results,
+.search-bar__results__list-item,
+.search-bar__results__link {
+  display: block;
+}
+
+.search-bar__results {
+  background-color: rgba(17, 17, 27, 0.9);
+  position: absolute;
+  left: 0;
+  width: 232px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  z-index: 1000;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.search-bar__results__list-item {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 15px;
+  border-bottom: 1px solid #45475a;
+}
+
+.search-bar__results__list-item:last-of-type {
+  border-bottom: none;
+}
+
+.search-bar__results__link {
+  padding: 5px 8px;
+}
+
+.search-bar__results__link,
+.search-bar__results__link:hover {
+  color: #a6adc8;
+}
+
+.search-bar__results__list-item--is-highlighted > .search-bar__results__link,
+.search-bar__results__list-item--is-highlighted
+  > .search-bar__results__link:hover {
+  color: #cdd6f4;
+  background-color: #89b4fa;
+}
+
+#log input[type="checkbox"],
+#log select[name="limit"] {
+  vertical-align: text-top;
+  margin-left: 0.55rem;
+}
+
+#log select[name="limit"] {
+  position: relative;
+  top: -6px;
+  margin-right: 0.55rem;
+}
+
+.sidebar {
+  float: right;
+  width: 250px;
+}
+
+.sidebar-cover-image {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+#user .sidebar-cover-image[alt*="avatar"]:hover {
+  transform: scale(1);
+  cursor: initial;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#user .panel:nth-of-type(1) .small-cover-movie-list__movie {
+  margin: 0 auto 0;
+}
+
+.release-name-movie-list__name {
+  font-size: 14px;
+}
+
+.release-name-movie-list__movie__release-category {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #313244;
+}
+
+.release-name-movie-list__movie__release-category__link,
+.release-name-movie-list__movie__release-name,
+.release-name-movie-list__movie__new,
+.release-name-movie-list__movie__rating__title {
+  font-weight: 700;
+}
+
+.release-name-movie-list__movie__release-category__link {
+  white-space: nowrap;
+  font-size: 11px;
+  text-shadow: 1px 1px 1px rgba(5, 5, 5, 0.5);
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.release-name-movie-list__movie__new {
+  font-size: 10px;
+  color: #89b4fa;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.release-name-movie-list__movie__action-container {
+  float: right;
+}
+
+.release-name-movie-list__movie__ratings-and-tags {
+  padding-top: 2px;
+}
+
+.release-name-movie-list__movie__rating-container {
+  display: inline;
+  padding: 1px 4px;
+  margin-right: 4px;
+  background-color: #45475a;
+}
+
+.release-name-movie-list__movie__tags {
+  padding: 2px;
+  font-style: italic;
+}
+
+.panel {
+  background-color: #45475a;
+  border: none;
+  margin-bottom: 1em;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.panel__heading {
+  background-color: rgba(17, 17, 27, 0.9);
+  border: none;
+  padding: 7px;
+}
+
+.panel__heading__title,
+.panel__heading__title a {
+  font-weight: 700;
+  color: #cdd6f4;
+}
+
+.panel .panel__body {
+  border: 1px solid #585b70;
+}
+
+#last5t #last5-tab-control a {
+  color: #bac2de;
+}
+
+#last5t #last5-tab-control a:hover {
+  color: #cdd6f4;
+}
+
+.panel__heading img {
+  margin: 0 2.5px;
+}
+
+.panel__heading__toggler,
+.toggle {
+  float: right;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: #bac2de !important;
+}
+
+.panel__heading__toggler:hover,
+.toggle:hover {
+  color: #cdd6f4 !important;
+}
+
+.panel,
+.panel__heading {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.panel__body,
+.panel tbody {
+  padding: 0.75rem 1rem;
+}
+
+.main-column {
+  margin: 0 255px 10px 0;
+  width: 715px;
+  overflow: hidden;
+}
+
+#messageformtable .username {
+  margin-right: 2px;
+}
+
+/* Movie List */
+.cover-movie-list__container {
+  margin-top: 1.5rem;
+}
+
+.small-cover-movie-list__movie {
+  position: relative;
+  margin: 0 auto 1.5rem;
+}
+
+.small-cover-movie-list__movie__link {
+  width: 147px;
+  height: 220px;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.small-cover-movie-list__movie__link--smaller {
+  width: 140px;
+  height: 214px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.small-cover-movie-list__movie__link--seen::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/seen.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.small-cover-movie-list__movie__title {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.basic-movie-list__torrent__action__link:hover {
+  color: #89b4fa;
+}
+
+.basic-movie-list__details-row {
+  vertical-align: top;
+}
+
+.basic-movie-list__movie__cover {
+  width: 116px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.basic-movie-list__movie__cover-link {
+  position: relative;
+  display: block;
+}
+
+.basic-movie-list__movie__cover-link--seen::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/seen.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.basic-movie-list__movie__category-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.basic-movie-list__number {
+  text-align: center;
+  font-weight: 700;
+}
+
+.basic-movie-list__movie__new,
+.basic-movie-list__movie__title-row {
+  font-weight: 700;
+}
+
+.basic-movie-list__movie__title {
+  color: #cdd6f4;
+}
+
+.basic-movie-list__movie__new,
+.basic-movie-list__movie__title:hover {
+  color: #89b4fa;
+}
+
+.basic-movie-list__movie__new {
+  visibility: hidden;
+  display: inline;
+}
+
+.basic-movie-list__movie__new:before {
+  visibility: visible;
+  content: "New";
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.6rem;
+  vertical-align: baseline;
+  color: #89b4fa;
+  background: rgba(137, 180, 250, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  margin-bottom: 0.1rem;
+  transition: all 0.3s;
+}
+
+.basic-movie-list__movie__new:hover:before {
+  background: rgba(137, 180, 250, 0.25);
+  color: #89b4fa;
+}
+
+.basic-movie-list__movie__bookmark {
+  float: right;
+}
+
+.basic-movie-list__movie__ratings-and-tags {
+  padding-top: 2px;
+}
+
+.basic-movie-list__movie__rating-container {
+  background-color: #45475a;
+  display: inline-block;
+  padding: 1px 4px;
+  margin: 0.1rem 0 0;
+  border: 1px solid #585b70;
+  border-radius: 2.5px;
+  transition: all 0.3s;
+}
+
+.basic-movie-list__movie__rating-container:hover {
+  background-color: #585b70;
+  border: 1px solid #6c7086;
+}
+
+.basic-movie-list__movie__rating__title,
+.basic-movie-list__movie__rating__rating,
+.basic-torrent-list__movie__torrent-opener-link,
+.basic-movie-list__torrent-edition__main {
+  font-weight: 700;
+}
+
+.basic-movie-list__torrent-edition {
+  background-color: #585b70;
+}
+
+.basic-movie-list__movie__rating__title a {
+  color: #cdd6f4;
+}
+
+.basic-movie-list__movie__tags {
+  padding: 2px;
+  font-style: italic;
+}
+
+.basic-torrent-list__movie__torrent-opener-link {
+  font-style: normal;
+  padding-left: 5px;
+}
+
+.basic-torrent-list__movie__additional-info {
+  margin-top: 15px;
+}
+
+.basic-movie-list__torrent-row {
+  height: 1em;
+}
+
+.basic-movie-list__torrent__action {
+  float: right;
+}
+
+.cover-movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.cover-movie-list div:not(.cover-movie-list__movie) {
+  display: none;
+}
+
+.cover-movie-list__movie__undercover,
+.cover-movie-list__movie__undercover > * {
+  display: block !important;
+  text-align: center;
+}
+
+.cover-movie-list__movie__title-row,
+.cover-movie-list__movie__rating-and-tags {
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+}
+
+.cover-movie-list__movie__title-row {
+  margin-bottom: 6px !important;
+}
+
+.cover-movie-list__movie {
+  position: relative;
+  width: auto;
+  max-width: 190px;
+  height: auto;
+  margin: 22px 12px;
+  text-align: center;
+}
+
+.cover-movie-list--narrow > .cover-movie-list__movie {
+  max-width: 168px;
+  margin: 0 25px 25px;
+}
+
+.cover-movie-list__movie__cover-link {
+  display: block;
+  width: 190px;
+  height: 296px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(17, 17, 27, 0.55);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: all 0.3s;
+  margin: 0 auto 0.8rem;
+}
+
+.cover-movie-list__movie__undercover {
+  padding: 0;
+  background: 0 0;
+  border-radius: 0 0 6px 6px;
+}
+
+.cover-movie-list__movie__title,
+.cover-movie-list__movie__new,
+.cover-movie-list__movie__rating {
+  font-weight: 700;
+}
+
+.cover-movie-list__movie__title-row,
+.cover-movie-list__movie__rating-and-tags {
+  color: #cdd6f4;
+  text-align: center;
+  vertical-align: super;
+  display: block;
+  margin: 0 auto 0.4rem;
+}
+
+.cover-movie-list__movie__title {
+  color: #cdd6f4;
+  display: inline-block;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cover-movie-list__movie__new,
+.cover-movie-list__movie__title:hover {
+  color: #89b4fa;
+}
+
+.cover-movie-list__movie__new {
+  font-size: 10px;
+  padding-left: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: super;
+}
+
+.cover-movie-list__movie__rating {
+  box-sizing: border-box;
+  background-color: #45475a;
+  color: #cdd6f4;
+  display: inline-block;
+  padding: 1px 6px;
+  margin-right: 0.3rem;
+  border: 1px solid #585b70;
+  border-radius: 5px;
+}
+
+.cover-movie-list__movie__rating:hover {
+  background-color: #585b70;
+  border: 1px solid #6c7086;
+}
+
+.cover-movie-list__movie__cover-link--seen::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 5px;
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/seen.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+span.cover-movie-list__movie__year {
+  display: inline-block;
+  vertical-align: super;
+  margin-left: 0.1rem;
+}
+
+#artist .cover-movie-list__movie__cover-link--seen::after,
+#bookmarks .cover-movie-list__movie__cover-link--seen::after,
+#collages .cover-movie-list__movie__cover-link--seen::after {
+  right: -40px;
+}
+
+.huge-movie-list__movie {
+  background-color: #45475a;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.huge-movie-list__movie:not(:first-child) {
+  margin-top: 15px;
+}
+
+.huge-movie-list__movie__cover {
+  position: relative;
+  float: left;
+  width: 256px;
+}
+
+.huge-movie-list__movie__cover__link {
+  display: block;
+  height: 360px;
+  width: 256px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.huge-movie-list__movie__cover__link--seen::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  background-image: url("https://datfunc.github.io/ptp/assets/icons/seen.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.huge-movie-list__movie__details {
+  margin-left: 256px;
+  position: relative;
+  padding: 10px 10px 0 10px;
+}
+
+.huge-movie-list__movie__title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #cdd6f4;
+}
+
+.huge-movie-list__movie__new,
+.huge-movie-list__movie__title:hover {
+  color: #89b4fa;
+}
+
+.huge-movie-list__movie__year {
+  font-size: 1.4em;
+}
+
+.huge-movie-list__movie__new {
+  font-size: 10px;
+  font-weight: 700;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.huge-movie-list__movie__tag-list {
+  font-size: 1em;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.huge-movie-list__movie__additional-info {
+  margin-top: 15px;
+}
+
+.huge-movie-list__movie__director-list {
+  font-size: 1em;
+}
+
+.huge-movie-list__movie__ratings-and-synopsis {
+  margin-top: 25px;
+}
+
+.huge-movie-list__movie__ratings-and-synopsis > tbody > tr > td {
+  background-color: #181825;
+  border: none;
+}
+
+.huge-movie-list__movie__ratings {
+  width: 130px;
+  margin: auto;
+}
+
+.huge-movie-list__movie__ratings__icon-column {
+  padding: 1px 6px 1px 5px;
+}
+
+.huge-movie-list__movie__ratings__votes-column {
+  padding: 1px 2px 1px 2px;
+}
+
+.huge-movie-list__movie__ratings img[src*="static/common/ratings/x1_imdb.png"] {
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+  padding-left: 42px;
+  background: url("https://datfunc.github.io/ptp/assets/icons/imdb-logo.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+.huge-movie-list__movie__ratings
+  img[src*="static/common/ratings/x2_metacritic.png"],
+.huge-movie-list__movie__ratings
+  img[src*="static/common/ratings/x3_tomatoes.png"],
+.huge-movie-list__movie__ratings img[src*="static/common/ratings/x4_ptp.png"] {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  padding-left: 32px;
+}
+
+.huge-movie-list__movie__ratings
+  img[src*="static/common/ratings/x2_metacritic.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/metacritic-logo.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+.huge-movie-list__movie__ratings
+  img[src*="static/common/ratings/x3_tomatoes.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/rt_alt.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+.huge-movie-list__movie__ratings img[src*="static/common/ratings/x4_ptp.png"],
+img[src="static/common/ratings/x4_ptp.png"] {
+  width: 28px !important;
+  height: 28px !important;
+  box-sizing: border-box;
+  padding-left: 28px !important;
+  background: url("https://datfunc.github.io/ptp/assets/icons/popcorn-colored.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+.huge-movie-list__movie__synopsis {
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+.huge-movie-list__movie__action-row {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.huge-movie-list__movie__torrent-summary {
+  margin-top: 25px;
+}
+
+.large-torrent-list-group-opener {
+  background: url("images/show.png") no-repeat center center;
+  width: 28px;
+  height: 28px;
+}
+
+.large-torrent-list-group-opener__link {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: none;
+}
+
+.basic-movie-list__movie__cover-link--seen,
+.cover-movie-list__movie__cover-link--seen,
+.huge-movie-list__movie__cover__link--seen,
+.small-cover-movie-list__movie__link--seen {
+  opacity: 0.75;
+  background-color: rgba(24, 24, 37, 0.4) !important;
+  background-blend-mode: darken;
+}
+
+.basic-movie-list__movie__cover-link--seen:hover,
+.cover-movie-list__movie__cover-link--seen:hover,
+.huge-movie-list__movie__cover__link--seen:hover,
+.small-cover-movie-list__movie__link--seen:hover {
+  opacity: 1;
+  background-color: none !important;
+  background-blend-mode: initial;
+}
+
+.basic-movie-list__movie__cover:hover,
+.cover-movie-list__movie__cover-link:hover,
+.huge-movie-list__movie__cover__link:hover,
+.small-cover-movie-list__movie__link:hover,
+.small-cover-movie-list__movie__link--smaller:hover,
+.sidebar-cover-image:hover,
+.user-recommendation__image:hover,
+.last5-movies__link:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 40px #74c7ec;
+}
+
+/* Torrents table icons - keeping original URLs */
+#browse_settings,
+img[src="static/common/symbols/settings.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/settings.svg")
+    no-repeat center center;
+  transition: all 2s ease-in-out;
+}
+
+#browse_settings:hover,
+img[src="static/common/symbols/settings.png"]:hover {
+  transform: rotate(360deg);
+  -webkit-filter: invert(0) sepia(0) saturate(1) hue-rotate(0) brightness(5);
+  filter: invert(0) sepia(0) saturate(1) hue-rotate(0) brightness(5);
+}
+
+img[title="Time"],
+img[src="static/common/time.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/time.svg")
+    no-repeat center center;
+}
+
+img[title="Snatches"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/snatched.svg")
+    no-repeat center center;
+}
+
+img[title="Seeders"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/arrow-up-white.svg")
+    no-repeat center center;
+}
+
+img[title="Leechers"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/arrow-down-white.svg")
+    no-repeat center center;
+}
+
+#browse_settings,
+img[src="static/common/symbols/settings.png"],
+img[title="Time"],
+img[src="static/common/time.png"],
+img[title="Snatches"],
+img[title="Seeders"],
+img[title="Leechers"] {
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  padding-left: 14px;
+  background-size: contain;
+}
+
+#bprate img[src="static/common/time.png"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Torrent Single Table */
+.movie-page__torrent__panel {
+  background-color: #181825;
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed #585b70;
+  border-radius: 5px;
+}
+
+img[src="static/common/symbols/uploader.png"] {
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  padding-left: 12px;
+  background: url("https://datfunc.github.io/ptp/assets/icons/arrow-up.svg")
+    no-repeat center center;
+  background-size: contain;
+}
+
+.movie-page__torrent__panel img {
+  margin-left: 0.3rem;
+  vertical-align: baseline;
+}
+
+.movie-page__torrent-report-container {
+  margin-top: 8px;
+  background-color: #313244;
+}
+
+.movie-page__torrent-report-date-and-reason {
+  padding: 5px;
+  border-bottom: 1px dotted #9399b2;
+}
+
+.movie-page__torrent-report-description {
+  padding: 5px 1rem;
+}
+
+.movie-page__torrent-report-staff-comment {
+  padding: 5px 1rem;
+  border-top: 1px dotted #9399b2;
+  background-color: #313244;
+}
+
+.release-description-preview {
+  background-color: #313244;
+  padding: 10px;
+  border: 1px solid #585b70;
+}
+
+.screenshot-comparison__container {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #11111b;
+  text-align: center;
+  z-index: 99;
+  display: block;
+  margin: 0 auto;
+}
+
+.screenshot-comparison__row {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.screenshot-comparison__image-container {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.screenshot-comparison__image {
+  border: 4px solid #89b4fa;
+}
+
+.screenshot-comparison__label {
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  color: #cdd6f4;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 0 4px #11111b, 0 0 4px #11111b, 0 0 4px #11111b, 0 0 4px #11111b;
+}
+
+.screenshot-comparison__old-school-toggler-container {
+  margin: 20px;
+}
+
+.screenshot-comparison__help {
+  display: inline-block;
+  margin-bottom: 20px;
+  max-width: 800px;
+  color: #cdd6f4;
+  text-align: left;
+}
+
+.screenshot-comparison__old-school-image {
+  width: 20%;
+}
+
+.movie-page__trailer {
+  margin-bottom: 14px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.movie-page__actor-column {
+  width: 180px;
+  text-align: right;
+}
+
+.movie-tooltip__title-row {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.movie-tooltip__title {
+  color: #cdd6f4;
+}
+
+.movie-tooltip__director-list {
+  margin-top: 3px;
+}
+
+.movie-tooltip__ratings {
+  margin: 3px 0 3px 0;
+}
+
+.movie-tooltip__rating-container {
+  background-color: #45475a;
+  display: inline;
+  margin-right: 4px;
+  padding: 1px 4px;
+  border: 1px solid #585b70;
+  border-radius: 0.25rem;
+}
+
+.movie-tooltip__rating__title > a,
+.movie-tooltip__tag,
+.movie-tooltip__rating__rating {
+  font-weight: 700;
+  color: #cdd6f4;
+}
+
+.movie-tooltip__rating__title > a:hover,
+.movie-tooltip__tag:hover {
+  text-decoration: none;
+  color: #cdd6f4;
+}
+
+.movie-tooltip__additional-info {
+  margin-top: 10px;
+}
+
+.movie-tooltip__trailer {
+  position: relative;
+  margin-top: 10px;
+  width: 150px;
+  height: 120px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.movie-tooltip__trailer:hover {
+  opacity: 0.75;
+}
+
+.movie-tooltip__trailer__image {
+  max-width: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid #585b70;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.movie-tooltip__trailer__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  background: url("https://datfunc.github.io/ptp/assets/icons/play-trailer.svg")
+    no-repeat center center;
+  background-size: contain;
+  opacity: 0.75;
+  transition: all 0.3s;
+}
+
+.movie-tooltip__trailer:hover .movie-tooltip__trailer__play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.movie-tooltip__synopsis {
+  margin-top: 10px;
+  line-height: 1rem;
+}
+
+.movie-tooltip__torrents {
+  margin-top: 10px;
+}
+
+.movie-tooltip__action-row {
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  font-weight: 700;
+  border-top: 1px solid #45475a;
+}
+
+.mediainfo {
+  margin: 0;
+  width: auto;
+}
+
+.mediainfo > tbody > tr,
+.mediainfo__section > tbody > tr {
+  background-color: #313244;
+  vertical-align: top;
+}
+
+.mediainfo > tbody > tr > td {
+  border: 1px solid #585b70;
+  padding: 5px;
+}
+
+.mediainfo__section {
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid #585b70;
+  border-collapse: collapse;
+}
+
+.mediainfo__section__caption {
+  font-weight: 700;
+}
+
+.mediainfo__section > tbody > td {
+  border: none;
+  padding: 2px;
+}
+
+.mediainfo--in-release-description {
+  width: 100%;
+}
+
+.mediainfo--in-release-description .mediainfo__section > tbody > tr,
+.mediainfo--in-release-description > tbody > tr {
+  background-color: #313244;
+  border-top: 1px solid #585b70;
+}
+
+.torrent_table img[src="static/common/check.png"],
+img[src*="static/common/check.png"],
+.torrent_table img[src="static/common/x.png"],
+img[src*="static/common/x.png"] {
+  width: 12px !important;
+  height: 12px !important;
+  box-sizing: border-box;
+  padding-left: 12px !important;
+  background-size: cover !important;
+}
+
+.torrent_table img[src="static/common/check.png"],
+img[src*="static/common/check.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/badge-checker.svg")
+    no-repeat center center;
+}
+
+.torrent_table img[src="static/common/x.png"],
+img[src*="static/common/x.png"] {
+  background: url("https://datfunc.github.io/ptp/assets/icons/not-approved_alt.svg")
+    no-repeat center center;
+  margin-right: 1px;
+}
+
+/* Animation Keyframes */
+@-webkit-keyframes jelly-effect {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  40% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  50% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.98, 1.02, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jelly-effect {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  40% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  50% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.98, 1.02, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Header styles */
+#header {
+  background: #11111b;
+  border-bottom: 1px solid #585b70;
+}
+
+#logo {
+  background-color: #11111b;
+}
+
+#menu {
+  background: #181825;
+}
+
+#menu a {
+  color: #bac2de;
+}
+
+#menu a:hover {
+  color: #cdd6f4;
+  background: #313244;
+}
+
+/* Footer */
+#footer {
+  background: #11111b;
+  color: #a6adc8;
+  border-top: 1px solid #585b70;
+}
+
+#footer a {
+  color: #bac2de;
+}
+
+#footer a:hover {
+  color: #cdd6f4;
+}
+
+/* Additional missing styles */
+.user-recommendation__image {
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.last5-movies__link {
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.badge-success {
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.15);
+}
+
+.badge-warning {
+  color: #f9e2af;
+  background: rgba(249, 226, 175, 0.15);
+}
+
+.badge-danger {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.15);
+}
+
+.badge-info {
+  color: #89b4fa;
+  background: rgba(137, 180, 250, 0.15);
+}
