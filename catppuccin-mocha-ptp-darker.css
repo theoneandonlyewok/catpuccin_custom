@@ -2187,7 +2187,7 @@ textarea::placeholder {
 /************************************************************************
   3.2 - Tables */
 .page__main-content {
-  background: #181825;
+  background: #11111B;
   margin: 0 auto;
   overflow: auto;
   padding: 2.5rem;
@@ -2468,7 +2468,7 @@ th {
 
 /* Search bar */
 .search-bar {
-  background: #1e1e2e;
+  background: #181825;
   font-size: 0.8rem;
   padding: 0.6em;
   margin-left: auto;
@@ -2685,7 +2685,7 @@ th {
 }
 
 .panel__heading {
-  background-color: rgba(13, 13, 21, 0.95);
+  background-color: #181825;
   border: none;
   padding: 7px;
 }
