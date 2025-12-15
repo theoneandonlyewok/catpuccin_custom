@@ -245,16 +245,7 @@ span.size10{font-size:3em}
 #header{width:100%;min-width:850px;margin:0 auto;}
 #footer{width:100%;min-width:850px;margin:40px auto 0;text-align:center;padding:1em 0;color:#CBD4F2;background:rgba(27,27,29,0.85)}
 #alerts{width:33%;min-width:850px;margin:0 auto; margin-top: 40px; margin-bottom: 15px;}
-#searchbars{
-  width:100%;
-  min-width:850px;
-  padding:8px;
-  text-align:center;
-  background:#181825;
-  box-sizing:border-box; /* Add this - padding is now included in width */
-  border-radius: 10px 10px 0 0;
-  border: 1px solid #1E1E2D;
-}
+
 /* LOGO + ANIMATION */
 #logo{width:100%;height:100px;background:transparent;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 #logo a{
@@ -332,38 +323,51 @@ span.size10{font-size:3em}
 #userinfo_minor a{margin-right:2px;color:#CBD4F2}
 
 /* Search */
+#searchbars{
+  width:100%;
+  min-width:850px;
+  padding:8px;
+  text-align:center;
+  background:#181825;
+  box-sizing:border-box;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #1E1E2D;
+}
+
 #searchbars ul{
-  margin:0 auto;
-  padding:0;
-  display:flex;
-  justify-content:space-evenly; /* Changed from center to evenly distribute */
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  gap:10px !important;
+  list-style:none !important;
 }
 
 #searchbars ul li{
-  flex:1; /* Allow items to grow and fill space */
-  margin-right:0; /* Remove fixed margin */
-  position:relative;
-  display:block; /* Changed from inline */
+  flex:1 1 0 !important; /* Force equal distribution */
+  margin:0 !important;
+  padding:0 !important;
+  display:block !important;
+  list-style:none !important;
 }
 
 #searchbars ul li form{
-  display:block; /* Changed from inline */
-  width:100%;
+  display:block !important;
+  width:100% !important;
 }
 
 #searchbars input{
-  width:90%; /* Use percentage instead of fixed width */
-  padding:8px 5px 8px 5px;
-  font-size:.9em;
-  background:#0D0D15;
-  border:1px solid #444;
-  color:#CBD4F2;
-  border-radius:5px;
-  text-align:center;
-  box-sizing:border-box; /* Include padding/border in width */
-  min-width:0; /* Allow shrinking below content size */
+  width:100% !important;
+  padding:8px 5px !important;
+  font-size:1.2em !important;
+  background:#0D0D15 !important;
+  border:1px solid #1E1E2E !important;
+  color:#CBD4F2 !important;
+  border-radius:5px !important;
+  text-align:center !important;
+  box-sizing:border-box !important;
 }
-
 #searchbars input:hover{color:#ddd;border-color:#555}
 #searchbars input:focus{color:#CBD4F2;border-color:#999}
 
