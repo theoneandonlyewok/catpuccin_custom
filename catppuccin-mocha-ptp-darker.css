@@ -499,7 +499,7 @@ body {
 }
 
 .torrent-info-link--user-snatched {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .torrent-info__download-modifier--free,
@@ -628,7 +628,7 @@ html, body {
 
 body {
   position: relative;
-  background: #1E1E2E;
+  background: #11111B;
 }
 
 body::before {
@@ -1721,8 +1721,8 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-  background: #89b4fa;
-  box-shadow: 0 0 40px #89b4fa;
+  background: #CBA6F7;
+  box-shadow: 0 0 40px #CBA6F7;
   outline: 0;
 }
 
@@ -1730,13 +1730,13 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-  border: 1px solid #89b4fa;
-  box-shadow: 0 0 40px #89b4fa;
+  border: 1px solid #CBA6F7;
+  box-shadow: 0 0 40px #CBA6F7;
 }
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-  outline-color: #89b4fa;
+  outline-color: #CBA6F7;
 }
 
 #inbox label {
@@ -1846,8 +1846,8 @@ input[type="search"]::-webkit-search-decoration {
 input[type="text"]:focus,
 textarea:focus {
   outline: 0;
-  box-shadow: 0 0 40px #89b4fa;
-  border: 1px solid #89b4fa;
+  box-shadow: 0 0 40px #CBA6F7;
+  border: 1px solid #CBA6F7;
 }
 
 input[value="Search log"] {
@@ -2035,7 +2035,7 @@ textarea::placeholder {
     --active-inner: #cdd6f4;
     --focus: 2px rgba(39, 94, 254, 0.3);
     --border: #313244;
-    --border-hover: #89b4fa;
+    --border-hover: #CBA6F7;
     --background: #0d0d15;
     --disabled: #f6f8ff;
     --disabled-inner: #e1e6f9;
@@ -2187,7 +2187,7 @@ textarea::placeholder {
 /************************************************************************
   3.2 - Tables */
 .page__main-content {
-  background: #11111B;
+  background: #181825;
   margin: 0 auto;
   overflow: auto;
   padding: 2.5rem;
@@ -2373,7 +2373,7 @@ th {
 }
 
 #trumpable .release-name-movie-list__movie__release-name:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .tabs__bar__list {
@@ -2459,7 +2459,7 @@ th {
 }
 
 .l_movie:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .tags {
@@ -2584,7 +2584,7 @@ th {
 .search-bar__results__list-item--is-highlighted
   > .search-bar__results__link:hover {
   color: #cdd6f4;
-  background-color: #89b4fa;
+  background-color: #CBA6F7;
 }
 
 #log input[type="checkbox"],
@@ -2652,7 +2652,7 @@ th {
 
 .release-name-movie-list__movie__new {
   font-size: 10px;
-  color: #89b4fa;
+  color: #CBA6F7;
   padding-left: 2px;
   text-transform: uppercase;
 }
@@ -2685,7 +2685,7 @@ th {
 }
 
 .panel__heading {
-  background-color: #181825;
+  background-color: rgba(13, 13, 21, 0.95);
   border: none;
   padding: 7px;
 }
@@ -2789,7 +2789,7 @@ th {
 }
 
 .basic-movie-list__torrent__action__link:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .basic-movie-list__details-row {
@@ -2840,7 +2840,7 @@ th {
 
 .basic-movie-list__movie__new,
 .basic-movie-list__movie__title:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .basic-movie-list__movie__new {
@@ -2856,7 +2856,7 @@ th {
   font-weight: 700;
   font-size: 0.6rem;
   vertical-align: baseline;
-  color: #89b4fa;
+  color: #CBA6F7;
   background: rgba(66, 129, 218, 0.15);
   padding: 0.2rem 0.6rem;
   border-radius: 1rem;
@@ -2866,7 +2866,7 @@ th {
 
 .basic-movie-list__movie__new:hover:before {
   background: rgba(66, 129, 218, 0.25);
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .basic-movie-list__movie__bookmark {
@@ -3013,7 +3013,7 @@ th {
 
 .cover-movie-list__movie__new,
 .cover-movie-list__movie__title:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .cover-movie-list__movie__new {
@@ -3112,7 +3112,7 @@ span.cover-movie-list__movie__year {
 
 .huge-movie-list__movie__new,
 .huge-movie-list__movie__title:hover {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .huge-movie-list__movie__year {
@@ -3410,7 +3410,7 @@ img[src="static/common/symbols/uploader.png"] {
 }
 
 .screenshot-comparison__image {
-  border: 4px solid #89b4fa;
+  border: 4px solid #CBA6F7;
 }
 
 .screenshot-comparison__label {
@@ -4194,7 +4194,7 @@ img[src="static/common/flags/vietnam.gif"] {
 }
 
 .forum-post--unread {
-  border: 1px solid #89b4fa;
+  border: 1px solid #CBA6F7;
 }
 
 .forum-post--is-reply {
@@ -4202,7 +4202,7 @@ img[src="static/common/flags/vietnam.gif"] {
 }
 
 .forum-post__id--staff-post {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .forum-post--heading-only {
@@ -4366,7 +4366,7 @@ img[alt="Default avatar"] {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #89b4fa;
+  background-color: #CBA6F7;
   transform-origin: center;
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -4469,7 +4469,7 @@ img[src="static/forums/locked_read.png"] {
 }
 
 .forum-topic__new {
-  color: #89b4fa;
+  color: #CBA6F7;
 }
 
 .forum-topic__go-to-last-read {
@@ -4544,7 +4544,7 @@ img[src="static/forums/locked_read.png"] {
 .poll__bar__center,
 .poll__bar__right {
   float: left;
-  background: #89b4fa;
+  background: #CBA6F7;
   height: 9px;
   margin: 0;
   padding: 0;
@@ -5031,7 +5031,7 @@ img[src="static/forums/locked_read.png"] {
 .user-info-bar__drop-down-menu__link:hover {
   text-decoration: none;
   color: #cdd6f4;
-  background-color: #89b4fa;
+  background-color: #CBA6F7;
 }
 
 #nav_more:hover {
@@ -5077,7 +5077,7 @@ img[src="static/forums/locked_read.png"] {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #89b4fa;
+  background-color: #CBA6F7;
   transform-origin: center;
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -5124,7 +5124,7 @@ img[src="static/forums/locked_read.png"] {
   margin: 0 auto;
   font-size: 6rem;
   text-align: center !important;
-  background-color: #89b4fa;
+  background-color: #CBA6F7;
   background-image: linear-gradient(
     90deg,
     #f38ba8 4%,
@@ -5742,12 +5742,12 @@ body {
 }
 
 .forum-post--sticky {
-    border: 1px solid #89b4fa;
+    border: 1px solid #CBA6F7;
     box-shadow: 0 0 40px rgba(66, 129, 218, .24);
     background: #181825 url("https://datfunc.github.io/ptp/assets/imgs/body_bg.svg") top center;
     background-size: cover;
 }
 
 .sticky_post {
-    color: #89b4fa;
+    color: #CBA6F7;
 }
