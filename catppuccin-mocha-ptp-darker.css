@@ -4909,7 +4909,7 @@ img[src="static/forums/locked_read.png"] {
   left: 0;
   width: 100%;
   height: auto;
-  background-color: rgba(13, 13, 21, 0.95);
+  background-color: #313244;
   padding: 0.5rem 0;
   margin: 0 auto;
   text-align: center;
@@ -5101,7 +5101,7 @@ img[src="static/forums/locked_read.png"] {
   .user-info-bar {
     -webkit-backdrop-filter: blur(10px) !important;
     backdrop-filter: blur(10px) !important;
-    background-color: rgba(13, 13, 21, 0.75) !important;
+    background-color: #181825 !important;
   }
 }
 
