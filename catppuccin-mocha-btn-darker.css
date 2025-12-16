@@ -187,7 +187,6 @@ li{margin:5px 15px}
 input,select{padding:2px 3px;background:#D20F39;border:1px solid #666;color:#CBD4F2;font:11px Tahoma;outline:0}
 input:hover,input:focus,select:hover,select:focus{border-color:#aaa}
 
-
 textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input{
   border:1px solid rgba(255,255,255,0.09)!important;
   border-color:rgba(255,255,255,0.09)!important;
@@ -247,15 +246,14 @@ span.size10{font-size:3em}
 }
 
 #content{
-  margin:5px auto; /* Reduced from 20px */
+  margin:5px auto;
   width:100%;
   min-width:850px;
-  border-radius: 0 0 25px 25px !important; /* Only round bottom corners */
+  border-radius: 0 0 25px 25px !important;
   overflow: hidden !important;
   position:relative;
   background:#181825;
-  
-  padding:0; /* Ensure no padding */
+  padding:0;
 }
 #header{width:100%;min-width:850px;margin:0 auto;}
 #footer{width:100%;min-width:850px;margin:40px auto 0;text-align:center;padding:1em 0;color:#CBD4F2;background:#1E1E2D;border-radius: 0 0 25px 25px; border-top: 1px solid #313244}
@@ -266,10 +264,11 @@ span.size10{font-size:3em}
   padding:8px;
   text-align:center;
   background:#181825;
-  box-sizing:border-box; /* Add this - padding is now included in width */
+  box-sizing:border-box;
   border-radius: 10px 10px 0 0;
   border: 1px solid #1E1E2D;
 }
+
 /* LOGO + ANIMATION */
 #logo{width:100%;height:100px;background:transparent;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 #logo a{
@@ -281,7 +280,7 @@ span.size10{font-size:3em}
   justify-content:center;
   text-decoration:none;
   position:relative;
-  padding-top:40px; /* Add this */
+  padding-top:40px;
 }
 #logo a::before{content:"B r o a d c a s T h e . N e t";font-family: "Open Sans", Helvetica, Tahoma, Arial, sans-serif;
   font-size:62px;font-weight:bold;color:#008ABE;text-shadow:0 0 3px rgba(0,138,190,0.8),0 0 10px rgba(0,138,190,0.6),2px 0 0 rgba(255,0,255,0.4),-2px 0 0 rgba(0,255,255,0.3);
@@ -308,10 +307,10 @@ span.size10{font-size:3em}
 #userinfo{position:relative}
 #userinfo::before{
   content:'';
-  position:fixed; /* Changed to fixed so it always spans full viewport */
-  top:0; /* Align to top of viewport */
-  left:0; /* Start at left edge */
-  transform:none; /* Remove transform */
+  position:fixed;
+  top:0;
+  left:0;
+  transform:none;
   width:100vw;
   height:32px;
   background:#1E1E2D;
@@ -321,7 +320,7 @@ span.size10{font-size:3em}
 #userinfo ul li{display:inline;margin:0 .1em;line-height:20px;vertical-align:middle;padding:2px}
 #userinfo a{color:#CBD4F2}
 #userinfo a:hover{text-decoration:none}
-#userinfo b a{font-weight:normal;font-size:.9em}
+#userinfo b a{fon181825t-weight:normal;font-size:.9em}
 #userinfo span.stat{color:#CBD4F2}
 
 /* Username - left side of group - KEEP ABSOLUTE */
@@ -352,7 +351,7 @@ span.size10{font-size:3em}
   min-width:850px;
   padding:8px;
   text-align:center;
-  background:#181825;
+  background:#1E1E2E;
   box-sizing:border-box;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid #313244;
@@ -369,7 +368,7 @@ span.size10{font-size:3em}
 }
 
 #searchbars ul li{
-  flex:1 1 0 !important; /* Force equal distribution */
+  flex:1 1 0 !important;
   margin:0 !important;
   padding:0 !important;
   display:block !important;
@@ -407,9 +406,9 @@ span.size10{font-size:3em}
   box-sizing:border-box !important;
   background:#1E1E2E;
   display:block;
-  padding:0 !important; /* Remove any padding */
-  border-radius: 10px; /* Round all corners */
-  overflow:hidden; /* Ensures children respect border-radius */
+  padding:0 !important;
+  border-radius: 10px;
+  overflow:hidden;
 }
 
 .head{
@@ -420,7 +419,7 @@ span.size10{font-size:3em}
   margin:0 !important;
   position:relative!important;
   box-sizing:border-box !important;
-  border-radius: 10px 10px 0 0 !important; /* Only round top corners */
+  border-radius: 10px 10px 0 0 !important;
   display:block !important;
   width:100% !important;
 }
@@ -526,7 +525,7 @@ ul.navigation a.selected{color:#CBD4F2!important;background:rgba(79,156,198,0.9)
   color:#CBD4F2;
   font-weight:bold;
   text-decoration:none!important;
-  padding:0 20px 8px 20px!important; /* Added bottom padding for the indicator */
+  padding:0 20px 8px 20px!important;
   position:relative;
 }
 
@@ -544,12 +543,12 @@ ul.navigation a.selected{color:#CBD4F2!important;background:rgba(79,156,198,0.9)
 }
 
 #menu li a:hover{
-  background:linear-gradient(to top, rgba(79,156,198,0.3), rgba(79,156,198,0))!important; /* Gradient from bottom to top */
+  background:linear-gradient(to top, rgba(79,156,198,0.3), rgba(79,156,198,0))!important;
   border-bottom:0!important;
 }
 
 #menu li a:hover::after{
-  height:3px; /* Height of the bar */
+  height:3px;
   animation:pulse-bar 1s ease-in-out infinite;
 }
 
@@ -563,7 +562,6 @@ ul.navigation a.selected{color:#CBD4F2!important;background:rgba(79,156,198,0.9)
   }
 }
 
-
 .potato-menu:after{content:" ";display:block;visibility:hidden;clear:both;height:.1px;font-size:.1em;line-height:0}
 ul.potato-menu li.potato-menu-item{margin:0!important;position:relative;display:inline-block;float:none}
 ul.potato-menu li.potato-menu-item a{display:block;padding:0 20px;white-space:nowrap;outline:0;vertical-align:middle;line-height:30px!important;height:30px;overflow:hidden!important}
@@ -575,13 +573,12 @@ ul.potato-menu ul.potato-menu-group{
   background:rgba(5,5,5,0.85);
   width:160px;
   text-align:left;
-  border-radius:0 15px 15px 15px; /* Rounded bottom corners */
-  overflow:hidden; /* Ensures child elements respect the border-radius */
+  border-radius:0 15px 15px 15px;
+  overflow:hidden;
 }
 ul.potato-menu ul.potato-menu-group li{margin:0!important;padding:0!important}
 ul.potato-menu ul.potato-menu-group a{display:block!important;width:120px;padding:0 10px!important}
 ul.potato-menu ul.potato-menu-group a:hover{background:rgba(40,40,40,0.85)!important;color:#70D9FF!important}
-/* Make the last item's hover respect the rounded corners */
 ul.potato-menu ul.potato-menu-group li:last-child a:hover{
   border-radius:0 0 8px 8px;
 }
@@ -612,7 +609,7 @@ table#torrent_table.torrent_table{width:100%;margin:auto}
 .M4V{color:#ff6e00}
 .AVI{color:#ffaf00}
 .Internal{color:#58ff00}
-.None,.\0D\0D\0D{color:#e89ba0}
+.None,.\\0D\\0D\\0D{color:#e89ba0}
 .P2P{color:#ae83cc}
 .Scene{color:#95ccb6}
 .User{color:#faf18b}
@@ -631,7 +628,7 @@ div.user_details{padding:5px}
 tr.unreadpm{background:rgba(27,88,121,0.85)!important}
 #forums .box{width:100%;margin:0 auto}
 form tr{background:rgba(34,34,34,0.85)}
-pre{color:#CBD4F2;margin:10px;padding:10px;border:1px dashed #666}
+pre{color:#CBD4F2;padding:10px;border:1px dashed #666}
 
 /* Polls & Lists */
 ul.stats li{padding:0 0 1px 0}
@@ -722,16 +719,16 @@ img[width="170"]:hover{width:368px!important;height:68px!important;position:abso
 img[id="banner"]{border:1px solid #222!important;box-shadow:0 5px 10px rgba(0,0,0,0.3)}
 
 /* Home */
-.home .sidebar{float:left;width:25% !important;} /* Add width */
-.home .main_column{margin:0 0 10px;float:right;width:71% !important;} /* Change from 73% to 71% */
-#content .home .main_column{width:74% !important;} /* Match the width */
-#content .home .main_column .head{width:100%;} /* Changed from 95% */
+.home .sidebar{float:left;width:25% !important;}
+.home .main_column{margin:0 0 10px;float:right;width:71% !important;}
+#content .home .main_column{width:74% !important;}
+#content .home .main_column .head{width:100%;}
 #content .home .main_column .of_the_month .head {
-  width: 100% !important; /* Head should be full width of its box */
+  width: 100% !important;
 }
 #content .home .main_column .of_the_month .box {
   width: 49% !important;
-  float: none !important; /* Remove float when using flex */
+  float: none !important;
   display: flex !important;
   flex-direction: column !important;
   margin: 0 0 10px 0 !important;
@@ -743,9 +740,9 @@ img[id="banner"]{border:1px solid #222!important;box-shadow:0 5px 10px rgba(0,0,
   flex-direction: column !important;
 }
 
-#content .home .box{margin:15px 5px 10px;border-bottom-radius:0}
+#content .home .box{margin:10px 5px 8px !important;}
 #content .home .head{border-top-radius:0!important;margin-top:-22px;position:absolute;border:1px solid rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.04) rgba(255,255,255,0.03) rgba(255,255,255,0.01)!important}
-#content .home .sidebar .head{width:100%;} /* Changed from 90% */
+#content .home .sidebar .head{width:100%;}
 .home .box>.pad,.home .box>ul{border:1px solid #111;border-bottom-radius:0}
 .home .extrapad{padding:1em}
 .home table{border:0}
@@ -760,6 +757,59 @@ img[id="banner"]{border:1px solid #222!important;box-shadow:0 5px 10px rgba(0,0,
   flex-wrap: wrap !important;
   gap: 1% !important;
   overflow: visible !important;
+}
+
+/* Reduce header size on homepage */
+.home .head {
+  font-size: 1em !important;
+  padding: 6px !important;
+}
+
+/* Reduce sidebar images */
+.home .sidebar img {
+  max-width: 150px !important;
+  height: auto !important;
+}
+
+/* Reduce "Of the Month" images */
+.home .of_the_month img {
+  max-width: 180px !important;
+  height: auto !important;
+}
+
+/* Specifically target images with width attributes */
+.home img[width="250"] {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: auto !important;
+}
+
+.home img[width="190"] {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+.home img[width="170"] {
+  width: 130px !important;
+  max-width: 130px !important;
+  height: auto !important;
+}
+
+/* Adjust the "Last 5 Uploads" section */
+.home .sidebar .box ul li center img {
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+/* Reduce text size in lists slightly */
+.home ul.stats {
+  font-size: 90% !important;
+}
+
+/* Make the overall content more compact */
+.home .pad {
+  padding: 0.8em !important;
 }
 
 /* Of the Month styling with reordered elements */
@@ -786,7 +836,7 @@ img[id="banner"]{border:1px solid #222!important;box-shadow:0 5px 10px rgba(0,0,
 
 /* Reorder elements - Name first, then image */
 .home .of_the_month ul li:nth-child(1) {
-  order: 1 !important; /* Name first */
+  order: 1 !important;
   text-align: center !important;
   font-size: 115% !important;
   font-weight: bold !important;
@@ -797,22 +847,22 @@ img[id="banner"]{border:1px solid #222!important;box-shadow:0 5px 10px rgba(0,0,
 }
 
 .home .of_the_month ul li:nth-child(2) {
-  order: 2 !important; /* Image second */
+  order: 2 !important;
   margin: 0 0 15px 0 !important;
 }
 
 .home .of_the_month ul li:nth-child(3) {
-  order: 3 !important; /* Rating/info third */
+  order: 3 !important;
 }
 
 .home .of_the_month ul li:nth-child(4) {
-  order: 4 !important; /* Additional info */
+  order: 4 !important;
 }
 
-/* Rating number - larger and more prominent */
+/* Rating number - smaller and more appropriate */
 .home .month_rating {
   font-family: "Arial Black", sans-serif !important;
-  font-size: 48px !important;
+  font-size: 36px !important;
   color: #89B4FA !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
   float: right !important;
@@ -869,9 +919,6 @@ div.thin2{float:left;margin:auto;width:100%}
   z-index:1002
 }
 
-
-
-If you need to fine-tune the vertical alignment, adjust 
 #searchbutton{display:none}
 #quickpost{color:#eee!important;font-size:11px!important}
 #DonInfo{font-size:9px;font-family:Verdana;text-indent:3pt!important}
@@ -907,7 +954,6 @@ div.contenth textarea{background:rgba(40,40,40,0.9)!important;border:1px solid #
 div.contenth textarea:hover,div.contenth textarea:focus{border:1px solid #aaa!important}
 .bbcodetextbox{border-radius:0!important;-webkit-border-radius:0!important}
 .headh{border-left:0 hidden!important;border-right:0 hidden!important}
-
 
 /* ==========================================================================
    8.0 - Media Queries / Responsive Layout
