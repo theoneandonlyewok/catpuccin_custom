@@ -184,7 +184,7 @@ p{margin:10px 5px}
 li{margin:5px 15px}
 
 /* Form Elements */
-input,select{padding:2px 3px;background:#D20F39;border:1px solid #666;color:#CBD4F2;font:11px Tahoma;outline:0}
+input,select{padding:2px 3px;background:#181825;border:1px solid #666;color:#CBD4F2;font:11px Tahoma;outline:0}
 input:hover,input:focus,select:hover,select:focus{/*! border-color:#aaa */}
 
 textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input{
@@ -205,7 +205,8 @@ textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type=
 }
 
 textarea{
-  padding:2px 3px;background:#!important;
+  padding:2px 3px;
+  background:#181825!important;
   border:1px solid rgba(255,255,255,0.09)!important;
   color:#CBD4F2;font-size:11px!important;outline:0;
   box-shadow:0 1px 1px rgba(0,0,0,0.075) inset;
