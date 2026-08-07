@@ -1278,27 +1278,37 @@ table.forum_post tbody,
 table.forum_unread tbody {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2);              /* space between header row and content row */
+  gap: var(--sp-3);              /* space between header row and content row */
   width: 100%;
-  padding: var(--sp-2);          /* inset — lets the lighter .box bg show */
+  padding: var(--sp-5);          /* inset — lets the lighter .box bg show */
   box-sizing: border-box;
 }
 
 table.forum_post tr,
 table.forum_unread tr {
   display: flex;
-  gap: var(--sp-2);              /* space between avatar and body */
+  gap: var(--sp-3);              /* space between avatar and body */
   width: 100%;
   box-sizing: border-box;
+  background: transparent !important;  /* gap now shows the .box bg */
+  border: 0 !important;                /* kills the tr half of the double border */
 }
 
 table.forum_post td,
 table.forum_unread td {
   display: block;
   border: 1px solid var(--border-line);
-  border-radius: var(--radius-xs);   /* cells get their own rounding */
+  border-radius: var(--radius-xs);
   box-sizing: border-box;
-  overflow: hidden;                  /* clips inner content to the radius */
+  overflow: hidden;
+  background: var(--bg-panel-trans) url("images/pattern.png"); /* was on the tr */
+}
+
+/* colhead_dark is set on the tr, which is now transparent —
+   repaint the header on its cell instead */
+table.forum_post tr.colhead_dark td,
+table.forum_unread tr.colhead_dark td {
+  background: var(--bg-head) !important;
 }
 
 /* header row: its single (colspan) cell fills the row */
