@@ -1662,8 +1662,13 @@ div[style="height:140px; max-height:140px;max-width:758px;"] {
   box-shadow: var(--shadow-md);
 }
 
+/* Lumen store: the source skin re-pointed this at a relative
+   images/lumen/lumen_store_bg.png, which breaks the (working) stock image
+   unless that file is hosted next to this stylesheet. Kept on the CDN
+   image; to use a custom background, host the file and swap the URL to
+   url("images/lumen/lumen_store_bg.png"). */
 div[style="background-image:url(https://cdn.broadcasthe.net/common/lumen/lumen_store_bg.png);height:598px"] {
-  background-image: url("images/lumen/lumen_store_bg.png") !important;
+  background-image: url("https://cdn.broadcasthe.net/common/lumen/lumen_store_bg.png") !important;
   height: 598px;
 }
 
@@ -2279,11 +2284,14 @@ img[id="banner"] {
   #menu {
     width: 100% !important;
     min-width: 540px !important;
-    padding: var(--sp-3) 0 !important;
   }
 
   #donation {
     display: none !important;
+  }
+
+  #menu {
+    padding: var(--sp-3) 0 !important;
   }
 
   #menu ul li a {
