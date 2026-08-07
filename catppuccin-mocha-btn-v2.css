@@ -989,11 +989,11 @@ table.slice {
 }
 
 .colhead td {
-  padding: var(--sp-3) var(--sp-5);
+  padding: 0 var(--sp-5);
 }
 
 td.colhead {
-  padding: var(--sp-3) var(--sp-5);
+  padding-inline: var(--sp-5);
 }
 
 .colhead .sign,
@@ -1686,6 +1686,97 @@ div.thin2 {
 .ui-tabs {
   position: relative;
   padding: 0 !important;
+}
+
+/* ---- Series Summary tabs (jQuery UI vertical tabs) ----
+   Rebuilt as a flex row: icon rail fixed-width, panel fills the rest.
+   Borderless except the tab chips. */
+#summary .ui-widget-content,
+#summary .ui-tabs {
+  background: var(--bg-panel-trans) !important;
+  border: 0 !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+}
+
+#summary .ui-tabs {
+  display: flex !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Tab rail (the vertical strip holding the icons) */
+#summary ul.ui-tabs-nav,
+#summary .ui-widget-header {
+  flex: 0 0 auto;          /* rail stays icon-width */
+  float: none !important;
+  margin: 0 !important;
+  background: var(--bg-head) !important;
+  border: 0 !important;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+}
+
+/* Individual tabs — the only bordered element in the widget */
+#summary .ui-state-default,
+#summary li.ui-state-default {
+  background: var(--bg-chip) !important;
+  border: 1px solid var(--border-line) !important;
+  margin: var(--sp-2) !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+/* Active tab */
+#summary .ui-state-active,
+#summary li.ui-tabs-selected {
+  background: var(--bg-raised) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Tab hover — global .ui-state-hover recolors text; this adds a surface */
+#summary li.ui-state-default:hover {
+  background: var(--bg-chip-hover) !important;
+}
+
+/* Panel text area: fills all width the rail doesn't use */
+#summary .ui-tabs-panel {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+  float: none !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--text-primary) !important;
+  padding: var(--sp-5) !important;
+}
+
+/* Only the active panel occupies the flex row */
+#summary .ui-tabs-hide {
+  display: none !important;
+}
+
+/* Tab chips: uniform size, icon centered */
+#summary ul.ui-tabs-nav li {
+  display: flex !important;
+  margin: var(--sp-2) !important;
+}
+
+#summary ul.ui-tabs-nav li a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#summary ul.ui-tabs-nav li a img {
+  display: block !important;
+  max-width: 20px !important;
+  max-height: 18px !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 /* ---- Lightbox / curtain ---- */
