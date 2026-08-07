@@ -1226,8 +1226,17 @@ table#torrent_table.torrent_table {
 }
 
 /* ---- Forums ---- */
-table.forum_post {
-  margin: var(--sp-5) 0;
+/* FIX (existed in base skin too): forum post tables never got a width, so
+   they shrink-wrapped to their content and the header bar / body box
+   stopped short of the post border. width:100% makes every inner box span
+   the container; td.body soaks up all space the fixed avatar column
+   doesn't use. The !important margins flatten the mix of stock
+   .vertical_margin / .box margins that made post gaps uneven. */
+table.forum_post,
+table.forum_unread {
+  width: 100% !important;
+  margin: var(--sp-5) 0 !important;
+  table-layout: auto;
 }
 
 table.forum_post td {
@@ -1244,11 +1253,7 @@ td.avatar {
 }
 
 table.forum_post td.body {
-  width: 75%;
-}
-
-tbody {
-  max-width: 100%;
+  width: 100%; /* was 75%: with the table now full-width, take everything the 150px avatar column leaves */
 }
 
 blockquote {
