@@ -1260,21 +1260,45 @@ table#torrent_table.torrent_table {
 }
 
 /* ---- Forums ---- */
-/* FIX (existed in base skin too): forum post tables never got a width, so
-   they shrink-wrapped to their content and the header bar / body box
-   stopped short of the post border. width:100% makes every inner box span
-   the container; td.body soaks up all space the fixed avatar column
-   doesn't use. The !important margins flatten the mix of stock
-   .vertical_margin / .box margins that made post gaps uneven. */
+/* FIX (existed in base skin too): posts are <table class="forum_post box">
+   and .box sets display:block — the table element becomes a full-width
+   block (the rounded border you see), while its rows collapse into an
+   ANONYMOUS table box inside it that shrink-wraps to content and can't be
+   targeted by any selector; width:100% on the element never reaches it.
+   Rebuilding the rows with flex makes the header bar and body track the
+   wrapper's full width. The !important margins flatten the stock
+   .vertical_margin / .box margin mix that made post gaps uneven. */
 table.forum_post,
 table.forum_unread {
   width: 100% !important;
   margin: var(--sp-5) 0 !important;
-  table-layout: auto;
 }
 
-table.forum_post td {
+table.forum_post tbody,
+table.forum_unread tbody {
+  display: block;
+  width: 100%;
+}
+
+table.forum_post tr,
+table.forum_unread tr {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+table.forum_post td,
+table.forum_unread td {
+  display: block;
   border: 1px solid var(--border-line);
+  box-sizing: border-box;
+}
+
+/* header row: its single (colspan) cell fills the row */
+table.forum_post tr.colhead_dark td,
+table.forum_unread tr.colhead_dark td {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 table.forum_unread {
@@ -1286,8 +1310,15 @@ td.avatar {
   padding: 0;
 }
 
-table.forum_post td.body {
-  width: 100%; /* was 75%: with the table now full-width, take everything the 150px avatar column leaves */
+table.forum_post td.avatar,
+table.forum_unread td.avatar {
+  flex: 0 0 150px;
+}
+
+table.forum_post td.body,
+table.forum_unread td.body {
+  flex: 1 1 auto;
+  min-width: 0; /* lets wide post content shrink instead of blowing out the row */
 }
 
 blockquote {
