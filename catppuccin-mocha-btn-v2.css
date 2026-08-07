@@ -935,6 +935,18 @@ table {
   box-shadow: var(--shadow-lg) !important;
 }
 
+td,
+th {
+  padding: var(--sp-3);
+  border: 1px solid var(--border-line);
+}
+
+th {
+  background: var(--bg-head);       /* optional: dark header band like colhead */
+  text-align: center;
+  vertical-align: middle;
+}
+
 tr {
   background: var(--bg-panel-trans) url("images/pattern.png");
   border: 1px solid var(--border-line);
@@ -1265,16 +1277,18 @@ table#torrent_table.torrent_table {
    ANONYMOUS table box inside it that shrink-wraps to content and can't be
    targeted by any selector; width:100% on the element never reaches it.
    Rebuilding the rows with flex makes the header bar and body track the
-   wrapper's full width. Rows are made transparent/borderless so the box
-   background shows in the gaps; cell backgrounds moved onto the tds. */
+   wrapper's full width. Rows are transparent/borderless so the box bg
+   shows in the gaps; cell backgrounds moved onto the tds.
+   NOTE: child combinators (>) throughout — descendant selectors would
+   also restyle markdown/stat tables nested inside post bodies. */
 table.forum_post,
 table.forum_unread {
   width: 100% !important;
   margin: var(--sp-5) 0 !important;
 }
 
-table.forum_post tbody,
-table.forum_unread tbody {
+table.forum_post > tbody,
+table.forum_unread > tbody {
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);              /* header row <-> content row */
@@ -1283,34 +1297,34 @@ table.forum_unread tbody {
   box-sizing: border-box;
 }
 
-table.forum_post tr,
-table.forum_unread tr {
+table.forum_post > tbody > tr,
+table.forum_unread > tbody > tr {
   display: flex;
   gap: var(--sp-3);              /* avatar <-> body */
   width: 100%;
   box-sizing: border-box;
-  background: transparent !important;  /* gaps show the .box bg */
-  border: 0 !important;                /* borders live on the cells only */
+  background: transparent !important;
+  border: 0 !important;
 }
 
-table.forum_post td,
-table.forum_unread td {
+table.forum_post > tbody > tr > td,
+table.forum_unread > tbody > tr > td {
   display: block;
   border: 1px solid var(--border-line);
   border-radius: var(--radius-xs);
   box-sizing: border-box;
   overflow: hidden;
-  background: var(--bg-panel-trans) url("images/pattern.png"); /* was on the tr */
+  background: var(--bg-panel-trans) url("images/pattern.png");
 }
 
 /* Header row: colhead_dark lives on the (now transparent) tr, so the cell
-   gets the dark bg. Flex centers text/icons vertically; the colspan cell
+   gets the dark bg. Flex centers text/icons vertically; colspan cell
    fills the row. */
-table.forum_post tr.colhead_dark td,
-table.forum_unread tr.colhead_dark td {
+table.forum_post > tbody > tr.colhead_dark > td,
+table.forum_unread > tbody > tr.colhead_dark > td {
   display: flex;
   align-items: center;
-  justify-content: flex-start;   /* anchor flex items left */
+  justify-content: flex-start;
   flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 0 var(--sp-2);
@@ -1318,29 +1332,29 @@ table.forum_unread tr.colhead_dark td {
   min-height: 28px;
   padding: var(--sp-3) var(--sp-4);
   background: var(--bg-head) !important;
-  text-align: left;              /* kill inherited centering inside items */
+  text-align: left;
 }
 
 /* [Top] [Subscribe] [Report] — right-floated span; flex ignores float */
-table.forum_post tr.colhead_dark td span[style*="float:right"],
-table.forum_post tr.colhead_dark td span[style*="float: right"],
-table.forum_unread tr.colhead_dark td span[style*="float:right"],
-table.forum_unread tr.colhead_dark td span[style*="float: right"] {
+table.forum_post > tbody > tr.colhead_dark > td span[style*="float:right"],
+table.forum_post > tbody > tr.colhead_dark > td span[style*="float: right"],
+table.forum_unread > tbody > tr.colhead_dark > td span[style*="float:right"],
+table.forum_unread > tbody > tr.colhead_dark > td span[style*="float: right"] {
   float: none !important;
   margin-left: auto;
 }
 
 /* left-side post info span: neutralize its float but keep it left */
-table.forum_post tr.colhead_dark td span[style*="float:left"],
-table.forum_post tr.colhead_dark td span[style*="float: left"],
-table.forum_unread tr.colhead_dark td span[style*="float:left"],
-table.forum_unread tr.colhead_dark td span[style*="float: left"] {
+table.forum_post > tbody > tr.colhead_dark > td span[style*="float:left"],
+table.forum_post > tbody > tr.colhead_dark > td span[style*="float: left"],
+table.forum_unread > tbody > tr.colhead_dark > td span[style*="float:left"],
+table.forum_unread > tbody > tr.colhead_dark > td span[style*="float: left"] {
   float: none !important;
   margin-right: auto;
 }
 
-table.forum_post tr.colhead_dark td img,
-table.forum_unread tr.colhead_dark td img {
+table.forum_post > tbody > tr.colhead_dark > td img,
+table.forum_unread > tbody > tr.colhead_dark > td img {
   vertical-align: middle;
 }
 
@@ -1348,35 +1362,35 @@ table.forum_unread {
   border: 2px solid var(--ctp-overlay2) !important;
 }
 
-/* Avatar column: hard 150px floor (+2px for borders), small inset padding */
+/* Avatar column: hard 182px floor (+2px borders), image centered,
+   stats text left-aligned */
 td.avatar {
-  width: 150px;
+  width: 182px;
 }
 
-table.forum_post td.avatar,
-table.forum_unread td.avatar {
-  flex: 0 0 184px;      /* 182px content + 2px borders */
+table.forum_post > tbody > tr > td.avatar,
+table.forum_unread > tbody > tr > td.avatar {
+  flex: 0 0 184px;
   min-width: 184px;
   padding: var(--sp-2);
-  text-align: left;      /* Joined/Upload/Posts text hugs the left */
+  text-align: left;
 }
 
-table.forum_post td.avatar img,
-table.forum_unread td.avatar img {
+table.forum_post > tbody > tr > td.avatar img,
+table.forum_unread > tbody > tr > td.avatar img {
   display: block;
-  margin: var(--sp-4) auto var(--sp-3);  /* 8px top, centered, 5px below */
+  margin: var(--sp-4) auto var(--sp-3);
   max-width: 100%;
   height: auto;
 }
 
-/* Body column: flexible, with real padding around the post text */
-table.forum_post td.body,
-table.forum_unread td.body {
+/* Body column: flexible, real padding around the post text */
+table.forum_post > tbody > tr > td.body,
+table.forum_unread > tbody > tr > td.body {
   flex: 1 1 auto;
-  min-width: 0; /* lets wide content shrink instead of blowing out the row */
+  min-width: 0;
   padding: var(--sp-5) var(--sp-6) !important;
 }
-
 blockquote {
   margin: var(--sp-5);
   padding: var(--sp-5);
