@@ -870,11 +870,10 @@ ul[class="stats nobullet"],
 /* Legacy 2px spacer bars */
 .b1h, .b2h, .b3h, .b4h,
 .b1bh, .b2bh, .b3bh, .b4bh {
-  height: 2px;
+  height: 1px !important;
   margin: 0 1px;
-  background: var(--ctp-text);
-  border-left: 0 solid var(--ctp-overlay0) !important;
-  border-right: 0 solid var(--ctp-overlay0) !important;
+  background: var(--border-line) !important;
+  border: 0 !important;
 }
 
 /* ---- Tags & similar artists ---- */
@@ -1864,16 +1863,75 @@ ul#twitter_update_list li.lastTweet {
 }
 
 /* ---- BBCode editor ---- */
-div.bbcode-btntoolbar,
-div.bbcode-smileys {
-  background: var(--bg-toolbar) !important;
-  border-left: 0 hidden !important;
-  border-right: 0 hidden !important;
+
+/* Post-reply editor: one continuous raised surface for all rows */
+div.contenth,
+div.contenth tr,
+div.contenth td,
+#quickreplytext,
+#quickreplybuttons {
+  background: var(--bg-page) !important;   /* light: surface0 mix */
+  border: 0 !important;
 }
 
-div.contenth textarea {
-  background: var(--bg-raised) !important;
+/* Toolbar + smiley rows: match the raised surface */
+div.bbcode-btntoolbar,
+div.bbcode-smileys {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: var(--sp-3) var(--sp-5) !important;
+  background: var(--bg-page) !important;   /* was --bg-panel */
+  border: 0 !important;
+  text-align: center !important;
+}
+
+/* Smileys: kill floats/baseline drift, nudge up to align with the toolbar */
+div.bbcode-smileys img,
+div.bbcode-smileys a {
+  position: relative !important;
+  top: -8px;
+  vertical-align: middle !important;
+  margin: var(--sp-1) !important;
+  float: none !important;
+}
+
+/* Frame the whole reply editor: toolbar through Submit */
+form:has(div.bbcode-btntoolbar) {
+  background: var(--bg-page) !important;
   border: 1px solid var(--border-line) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+  overflow: hidden;
+  padding-bottom: var(--sp-3);
+}
+
+/* Editor wrapper: side padding so the textarea shares the rows' inset */
+div.contenth {
+  padding: 0 var(--sp-5) !important;
+  box-sizing: border-box !important;
+}
+
+form:has(div.bbcode-btntoolbar) .b1h,
+form:has(div.bbcode-btntoolbar) .b2h,
+form:has(div.bbcode-btntoolbar) .b3h,
+form:has(div.bbcode-btntoolbar) .b4h,
+form:has(div.bbcode-btntoolbar) .b1bh,
+form:has(div.bbcode-btntoolbar) .b2bh,
+form:has(div.bbcode-btntoolbar) .b3bh,
+form:has(div.bbcode-btntoolbar) .b4bh {
+  display: none !important;
+}
+
+/* Textarea: dark input well on the raised surface */
+div.contenth textarea,
+#quickreplytext textarea {
+  position: static !important;
+  display: block;
+  width: 100% !important;
+  margin: var(--sp-3) auto !important;
+  box-sizing: border-box;
+  background: var(--bg-input) !important;    /* crust — was --bg-raised */
+  border: 1px solid var(--border-input) !important;
 }
 
 div.contenth textarea:hover,
@@ -1883,6 +1941,13 @@ div.contenth textarea:focus {
 
 .bbcodetextbox {
   border-radius: 0 !important;
+}
+
+/* Preview/Submit row: transparent, sits on the panel */
+#quickreplybuttons,
+.center:has(> input[value="Preview"]) {
+  padding: var(--sp-3);
+  background: transparent;
 }
 
 .headh {
