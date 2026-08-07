@@ -9,9 +9,9 @@
    font, spacing, radius, shadow, or animation timing anywhere else.
 
    * Change the site accent .......... edit --accent / --accent-hover
-       (currently Mauve/Lavender, per the site's Mocha+Mauve scheme.
-        To go back to the old blue look: --accent: var(--ctp-blue);
-        --accent-hover: var(--ctp-sky);)
+       (currently Sapphire/Sky — the electric blue of the poll bars and
+        logo. Other looks: Mauve/Lavender for the Mocha-standard accent,
+        or --ctp-blue / --ctp-sky for Catppuccin's default link blue.)
    * Change the secondary accent ..... edit --accent-alt (menu pulse bars,
        userinfo text, search focus — currently Sapphire)
    * Change the logo color ........... edit --logo / --logo-hover
@@ -89,8 +89,8 @@
   --ctp-crust: #11111b;
 
   /* ---- Accents ---- */
-  --accent: var(--ctp-mauve);          /* primary accent: links */
-  --accent-hover: var(--ctp-lavender); /* link/menu hover */
+  --accent: var(--ctp-sapphire);       /* primary accent: links — matches the poll-bar blue */
+  --accent-hover: var(--ctp-sky);      /* link/menu hover — the poll-bar gradient end */
   --accent-alt: var(--ctp-sapphire);   /* secondary: userinfo, menu bars, search focus */
   --logo: var(--ctp-sapphire);
   --logo-hover: var(--ctp-sky);
