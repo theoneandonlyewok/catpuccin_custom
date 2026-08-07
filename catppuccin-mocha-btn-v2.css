@@ -1276,13 +1276,18 @@ table.forum_unread {
 
 table.forum_post tbody,
 table.forum_unread tbody {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);              /* space between header row and content row */
   width: 100%;
+  padding: var(--sp-2);          /* inset — lets the lighter .box bg show */
+  box-sizing: border-box;
 }
 
 table.forum_post tr,
 table.forum_unread tr {
   display: flex;
+  gap: var(--sp-2);              /* space between avatar and body */
   width: 100%;
   box-sizing: border-box;
 }
@@ -1291,7 +1296,9 @@ table.forum_post td,
 table.forum_unread td {
   display: block;
   border: 1px solid var(--border-line);
+  border-radius: var(--radius-xs);   /* cells get their own rounding */
   box-sizing: border-box;
+  overflow: hidden;                  /* clips inner content to the radius */
 }
 
 /* header row: its single (colspan) cell fills the row */
