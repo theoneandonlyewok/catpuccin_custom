@@ -47,6 +47,9 @@
      are kept wherever the target is host CSS/inline styles, and removed
      only where they fought other rules inside this same file.
    * Selectors match BTN's own (Gazelle) markup and CANNOT be renamed.
+   * Sizes use absolute px/pt on purpose: BTN's stock CSS controls the
+     root font-size, so rem-based sizing renders smaller than intended.
+     Absolute units reproduce the original design exactly.
    ========================================================================== */
 
 /* ==========================================================================
@@ -133,23 +136,23 @@
   --font-heavy: "Arial Black", var(--font-sans);                     /* big stat numbers */
 
   /* ---- Type scale ---- */
-  --fs-xs: 0.5625rem;  /*  9px — fine print */
-  --fs-body: 0.667rem; /* ≈8pt — site default */
-  --fs-ui: 0.6875rem;  /* 11px — inputs, menu */
-  --fs-md: 0.833rem;   /* ≈10pt — h3 */
-  --fs-lg: 1rem;       /* 16px/12pt — h2, table signs */
-  --fs-stat: 2.25rem;  /* 36px — "of the month" rating */
-  --fs-logo: 3.875rem; /* 62px — logo cap size */
+  --fs-xs: 9px;    /* fine print */
+  --fs-body: 8pt;  /* site default */
+  --fs-ui: 11px;   /* inputs, menu */
+  --fs-md: 10pt;   /* h3 */
+  --fs-lg: 12pt;   /* h2, table signs */
+  --fs-stat: 36px; /* "of the month" rating */
+  --fs-logo: 62px; /* logo cap size */
 
   /* ---- Spacing scale ---- */
-  --sp-1: 0.125rem;  /*  2px */
-  --sp-2: 0.1875rem; /*  3px */
-  --sp-3: 0.3125rem; /*  5px */
-  --sp-4: 0.5rem;    /*  8px */
-  --sp-5: 0.625rem;  /* 10px */
-  --sp-6: 0.9375rem; /* 15px */
-  --sp-7: 1.25rem;   /* 20px */
-  --sp-8: 2.5rem;    /* 40px */
+  --sp-1: 2px;
+  --sp-2: 3px;
+  --sp-3: 5px;
+  --sp-4: 8px;
+  --sp-5: 10px;
+  --sp-6: 15px;
+  --sp-7: 20px;
+  --sp-8: 40px;
 
   /* ---- Radii ---- */
   --radius-xs: 5px;
@@ -168,6 +171,32 @@
   /* ---- Motion ---- */
   --dur-fast: 0.2s;
   --dur-base: 0.3s;
+
+  /* ---- User-class (permission_*) colors ----
+   * DELIBERATELY OFF-PALETTE. These are BTN's site-wide rank colors and are
+   * kept byte-identical to the source so user classes stay recognizable.
+   * Do not "fix" these to Mocha values. */
+  --perm-green-bold: #3cff00;  /* 15, 42, 1, 31 */
+  --perm-green-1: #99ff99;     /* 11 */
+  --perm-green-2: #66ff66;     /* 36 */
+  --perm-green-3: #33ff33;     /* 37 */
+  --perm-green-4: #55ff55;     /* 14 */
+  --perm-blue: #0066ff;        /* 32, 26, 29, 30, 34 */
+  --perm-gray: #cccccc;        /* 3 */
+  --perm-yellow-pale: #ffff99; /* 4 */
+  --perm-yellow: #ffff33;      /* 5 */
+  --perm-yellow-soft: #ffff66; /* 10 */
+  --perm-orange: #f87431;      /* 24 */
+  --perm-orange-deep: #ff7100; /* 22 */
+  --perm-red-orange: #ff3300;  /* 7 */
+  --perm-red: #cc0000;         /* 12 */
+  --perm-magenta: #ff00ff;     /* 33 */
+  --perm-purple: #9933ff;      /* 38, 6, 9, 35 */
+  --perm-purple-light: #9966ff;/* 8 */
+  --perm-purple-deep: #9900cc; /* 28 */
+  --perm-brown: #996666;       /* 13 */
+  --perm-plum: #660033;        /* 25 */
+  --perm-aqua: #00ffcc;        /* 27 */
 }
 
 /* ==========================================================================
@@ -1943,50 +1972,51 @@ div.contenth textarea:focus {
    colors were merged onto the same Mocha color — see the change log.
    ========================================================================== */
 
-/* ---- User class (permission_*) colors ---- */
+/* ---- User class (permission_*) colors ----
+   Original site rank colors, kept exact (see --perm-* tokens in :root). */
 a.permission_15, .permission_15,
 a.permission_42, .permission_42,
 a.permission_1, .permission_1,
-a.permission_31, .permission_31 { color: var(--ctp-green); font-weight: bold; }
+a.permission_31, .permission_31 { color: var(--perm-green-bold); font-weight: bold; }
 
-a.permission_11, .permission_11,
-a.permission_36, .permission_36,
-a.permission_37, .permission_37,
-a.permission_14, .permission_14 { color: var(--ctp-green); }
+a.permission_11, .permission_11 { color: var(--perm-green-1); }
+a.permission_36, .permission_36 { color: var(--perm-green-2); }
+a.permission_37, .permission_37 { color: var(--perm-green-3); }
+a.permission_14, .permission_14 { color: var(--perm-green-4); }
 
 a.permission_32, .permission_32,
 a.permission_26, .permission_26,
 a.permission_29, .permission_29,
 a.permission_30, .permission_30,
-a.permission_34, .permission_34 { color: var(--ctp-blue); }
+a.permission_34, .permission_34 { color: var(--perm-blue); }
 
-a.permission_2, .permission_2 { color: var(--ctp-text); }
-a.permission_3, .permission_3 { color: var(--ctp-subtext1); }
+a.permission_2, .permission_2 { color: var(--text-primary); }
+a.permission_3, .permission_3 { color: var(--perm-gray); }
 
-a.permission_4, .permission_4,
-a.permission_5, .permission_5,
-a.permission_10, .permission_10 { color: var(--ctp-yellow); }
+a.permission_4, .permission_4 { color: var(--perm-yellow-pale); }
+a.permission_5, .permission_5 { color: var(--perm-yellow); }
+a.permission_10, .permission_10 { color: var(--perm-yellow-soft); }
 
-a.permission_24, .permission_24,
-a.permission_22, .permission_22 { color: var(--ctp-peach); }
+a.permission_24, .permission_24 { color: var(--perm-orange); }
+a.permission_22, .permission_22 { color: var(--perm-orange-deep); }
 
-a.permission_7, .permission_7,
-a.permission_12, .permission_12 { color: var(--ctp-red); }
+a.permission_7, .permission_7 { color: var(--perm-red-orange); }
+a.permission_12, .permission_12 { color: var(--perm-red); }
 
-a.permission_33, .permission_33 { color: var(--ctp-pink); }
+a.permission_33, .permission_33 { color: var(--perm-magenta); }
 
 a.permission_38, .permission_38,
 a.permission_6, .permission_6,
 a.permission_9, .permission_9,
-a.permission_28, .permission_28,
-a.permission_35, .permission_35 { color: var(--ctp-mauve); }
+a.permission_35, .permission_35 { color: var(--perm-purple); }
 
-a.permission_8, .permission_8 { color: var(--ctp-lavender); }
+a.permission_8, .permission_8 { color: var(--perm-purple-light); }
+a.permission_28, .permission_28 { color: var(--perm-purple-deep); }
 
-a.permission_13, .permission_13,
-a.permission_25, .permission_25 { color: var(--ctp-maroon); }
+a.permission_13, .permission_13 { color: var(--perm-brown); }
+a.permission_25, .permission_25 { color: var(--perm-plum); }
 
-a.permission_27, .permission_27 { color: var(--ctp-teal); }
+a.permission_27, .permission_27 { color: var(--perm-aqua); }
 
 /* ---- Rating colors (red -> green scale) ---- */
 .r00 { color: var(--ctp-red) !important; }
@@ -2294,7 +2324,7 @@ img[id="banner"] {
   }
 
   #logo a::before {
-    font-size: clamp(2rem, 7vw, 62px) !important;
+    font-size: clamp(32px, 7vw, 62px) !important;
   }
 
   .sidebar,
@@ -2362,7 +2392,7 @@ img[id="banner"] {
   }
 
   #logo a::before {
-    font-size: clamp(1.5rem, 8vw, 62px) !important;
+    font-size: clamp(24px, 8vw, 62px) !important;
     letter-spacing: 0 !important;
   }
 
@@ -2375,7 +2405,7 @@ img[id="banner"] {
     transform: none !important;
     display: block !important;
     width: 100% !important;
-    margin: 0.3rem auto !important;
+    margin: 5px auto !important;
     text-align: center !important;
   }
 
@@ -2505,7 +2535,7 @@ img[id="banner"] {
   }
 
   table {
-    font-size: 0.65rem !important;
+    font-size: 10px !important;
   }
 
   td,
@@ -2518,13 +2548,13 @@ img[id="banner"] {
 @media (max-width: 850px) and (orientation: landscape) {
   #logo a::before {
     padding-top: var(--sp-7) !important;
-    font-size: clamp(1.8rem, 5vw, 62px) !important;
+    font-size: clamp(29px, 5vw, 62px) !important;
   }
 
   #userinfo_username,
   #userinfo_stats,
   #userinfo_major {
-    font-size: 0.75rem !important;
+    font-size: 12px !important;
   }
 
   #menu ul li a {
