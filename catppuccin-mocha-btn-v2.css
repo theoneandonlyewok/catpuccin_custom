@@ -56,7 +56,11 @@
    1. DESIGN TOKENS
    ========================================================================== */
 :root {
-  /* ---- Raw Catppuccin Mocha palette (official values — do not edit) ---- */
+  /* ---- Raw Catppuccin Mocha palette (official values — do not edit).
+          The full 26-color palette is declared even though a couple of
+          entries (rosewater, overlay1) are currently unreferenced — they
+          are kept so semantic tokens can be re-pointed without hunting
+          down hex codes. ---- */
   --ctp-rosewater: #f5e0dc;
   --ctp-flamingo: #f2cdcd;
   --ctp-pink: #f5c2e7;
@@ -1671,7 +1675,7 @@ div[style="background-image:url(https://cdn.broadcasthe.net/common/lumen/lumen_s
 .info table {
   margin: 0;
   padding: 0;
-  border: 0 none;
+  border: 0;
   vertical-align: top;
 }
 
@@ -2275,15 +2279,11 @@ img[id="banner"] {
   #menu {
     width: 100% !important;
     min-width: 540px !important;
+    padding: var(--sp-3) 0 !important;
   }
 
   #donation {
     display: none !important;
-  }
-
-  #menu {
-    min-width: 540px !important;
-    padding: var(--sp-3) 0 !important;
   }
 
   #menu ul li a {
@@ -2421,7 +2421,6 @@ img[id="banner"] {
   }
 
   #menu {
-    min-width: 320px !important;
     height: auto !important;
     margin-top: -15px !important;
     padding: var(--sp-3) var(--sp-1) var(--sp-1) var(--sp-1) !important;
