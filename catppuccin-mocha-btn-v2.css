@@ -1041,6 +1041,36 @@ ul.navigation a.selected {
   color: var(--text-on-accent) !important;
 }
 
+/* Keep profile navigation tabs in one row */
+.usermenu > ul.navigation {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--sp-3);
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.usermenu > ul.navigation > li.head.colhead {
+  display: block !important;
+  flex: 1 1 0;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.usermenu > ul.navigation > li > a {
+  display: block;
+  width: 100%;
+  padding: var(--sp-3);
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+
 /* ---- Menu ---- */
 #menu {
   position: relative;
