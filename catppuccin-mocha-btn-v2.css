@@ -989,11 +989,11 @@ table.slice {
 }
 
 .colhead td {
-  padding: 0 var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
 }
 
 td.colhead {
-  padding-inline: var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
 }
 
 .colhead .sign,
